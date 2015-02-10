@@ -4,7 +4,10 @@
 <div class="sidebar-block">
 	<!-- <div class="block-title">Block title</div> -->
 	<noindex>
-		<object id="textru-flash-1" type="application/x-shockwave-flash" data="http://text.ru/images/partner/banner-1.swf" width="316" height="381">
+		
+		<a href="http://api.hostinger.com.ua/redir/586518" target="_blank"><img src="http://hostinger.com.ua/banners/ru/hostinger-300x250-2.gif" alt="Хостинг" border="0" width="300" height="250" /></a>
+
+		<!-- <object id="textru-flash-1" type="application/x-shockwave-flash" data="http://text.ru/images/partner/banner-1.swf" width="316" height="381">
 			<param name="quality" value="high">
 		    <param name="wmode" value="transparent">
 			<p>Баннер text.ru</p>
@@ -28,7 +31,7 @@
 				document.getElementById("textru-form-home").submit();
 				return false;
 			});
-		</script>
+		</script> -->
 	
 	</noindex>
 						
