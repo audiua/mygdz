@@ -40,6 +40,17 @@ class Book extends CActiveRecord
         );
     }
 
+    public function behaviors(){
+		return array(
+			'CTimestampBehavior' => array(
+				'class' => 'zii.behaviors.CTimestampBehavior',
+				'createAttribute' => 'create_time',
+				'updateAttribute' => 'update_time',
+				'setUpdateOnCreate'=>true,
+			)
+		);
+	}
+
     private $_url;
     
 	public function getUrl(){
@@ -58,10 +69,10 @@ class Book extends CActiveRecord
 		return array(
 			array('title, description, img, subject_id, slug, class_id, task_path, lang', 'required'),
 			array('title, author, img, year, slug, task_path, properties,pagination', 'length', 'max'=>255),
-			array('subject_id, class_id,public,created,ping_google,update_time', 'length', 'max'=>10),
+			array('subject_id, class_id,public,created,ping_google,update_time, public_time', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, author, description, img, year, subject_id, slug, class_id, task_path', 'safe', 'on'=>'search'),
+			array('id, title, author, description, img, year, subject_id, slug, class_id, task_path,public_time', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -97,6 +108,7 @@ class Book extends CActiveRecord
 			'created' => 'Создано',
 			'update_time' => 'Обновленно',
 			'public' => 'Public',
+			'public_time' => 'Public time',
 			'properties'=>'Особености',
 			'pagination'=>'Номерация',
 			'ping_google'=>'Google'
@@ -156,11 +168,6 @@ class Book extends CActiveRecord
 
 
 	public function beforeSave(){
-
-		$this->created = strtotime($this->created);
-		$this->update_time = strtotime($this->update_time);
-
-
 		return parent::beforeSave();
 	}
 
