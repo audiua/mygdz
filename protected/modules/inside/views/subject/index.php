@@ -60,6 +60,12 @@ $('.search-form form').submit(function(){
 			'value'=>'$data->id',
 			'htmlOptions'=>array('width'=>'30px')
 		),
+		'class_id'=>array(
+			'name'=>'class_id',
+			'value'=>'$data->clas->slug',
+			'header'=>'Клас',
+			'htmlOptions'=>array('width'=>'30px')
+		),
 		'title',
 		'slug',
 		'description',
