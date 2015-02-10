@@ -207,10 +207,6 @@ public function actionBook( $clas, $subject, $book ){
 		$this->clasModel = $this->loadClas($clas);
 		$this->subjectModel = $this->loadSubject($subject);
 		$this->bookModel = $this->loadBook($book);
-		
-
-		// d($this->bookModel);
-
 
 		$this->keywords = 'ГДЗ - готові домашні завдання ' . $this->subjectModel->title . ' ' 
 			.$clas.' клас ' . $this->bookModel->author . ', гдз '. $this->subjectModel->title . ' ' .$clas.' клас ' . $this->bookModel->author . ', гдз онлайн '

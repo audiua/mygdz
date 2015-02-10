@@ -69,7 +69,7 @@ class Book extends CActiveRecord
 		return array(
 			array('title, description, img, subject_id, slug, class_id, task_path, lang', 'required'),
 			array('title, author, img, year, slug, task_path, properties,pagination', 'length', 'max'=>255),
-			array('subject_id, class_id,public,created,ping_google,update_time, public_time', 'length', 'max'=>10),
+			array('subject_id, class_id,public,create_time,ping_google,update_time, public_time', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, title, author, description, img, year, subject_id, slug, class_id, task_path,public_time', 'safe', 'on'=>'search'),
@@ -105,7 +105,7 @@ class Book extends CActiveRecord
 			'slug' => 'Slug',
 			'class_id' => 'Класс',
 			'task_path' => 'Task Path',
-			'created' => 'Создано',
+			'create_time' => 'Создано',
 			'update_time' => 'Обновленно',
 			'public' => 'Public',
 			'public_time' => 'Public time',

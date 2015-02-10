@@ -73,11 +73,11 @@ Yii::import('ext.imperavi-redactor-widget.ImperaviRedactorWidget');
 
 	<div class="form-group">
 
-		<?php echo $form->labelEx($model,'clas_id', array('class'=>"col-md-2 col-lg-2 control-label")); ?>
+		<?php echo $form->labelEx($model,'class_id', array('class'=>"col-md-2 col-lg-2 control-label")); ?>
 		<?php 
 		
-		echo CHtml::dropDownList('Book_clas_id',$model->gdz_clas_id, 
-		  GdzClas::getAll(),
+		echo CHtml::dropDownList('Book_class_id', $model->class_id, 
+		  Clas::getAll(),
 		  array(
 		    // 'prompt'=>'Select Region',
 		    'class'=>'col-md-2 col-lg-2 control-label',
@@ -88,7 +88,7 @@ Yii::import('ext.imperavi-redactor-widget.ImperaviRedactorWidget');
 		    'data'=>array('clas'=>'js:this.value'),
 		  )));  ?>
 		<?php // echo $form->dropDownList($model,'gdz_clas_id', GdzClas::getAll(), array('class'=>'col-md-2 col-lg-2 control-label')); ?>
-		<?php echo $form->error($model,'clas_id'); ?>
+		<?php echo $form->error($model,'class_id'); ?>
 	</div>
 
 	<div class="form-group">
@@ -111,7 +111,7 @@ Yii::import('ext.imperavi-redactor-widget.ImperaviRedactorWidget');
 
 	<div class="form-group">
 		<?php echo $form->labelEx($model,'img', array('class'=>"col-md-2 col-lg-2 control-label")); ?>
-		<?php echo $form->dropDownList($model,'img', array('gif'=>'gif', 'png'=>'png', 'jpg'=>'jpg', 'jpeg'=>'jpeg'), array('class'=>'control-label col-md-2 col-lg-2')); ?>
+		<?php echo $form->textField($model,'img',array('size'=>60,'maxlength'=>255,'class'=>'col-md-4 col-lg-4 control-label')); ?>
 		<?php echo $form->error($model,'img'); ?>
 	</div>
 

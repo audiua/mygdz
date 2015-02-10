@@ -80,14 +80,14 @@ class BookController extends InsideController
 	{
 		$model=$this->loadModel($id);
 
-		$data = Yii::app()->getRequest()->getPost('GdzBook', null);
+		$data = Yii::app()->getRequest()->getPost('Book', null);
 
 		if (!empty($data)) {
-			$data['gdz_clas_id'] = Yii::app()->getRequest()->getPost('GdzBook_gdz_clas_id', null);
+			$data['clas_id'] = Yii::app()->getRequest()->getPost('Book_clas_id', null);
 			$model->attributes = $data;
 
 			if($model->save()){
-				Yii::app()->user->setFlash('GdzBook_FLASH', 'Збережено');
+				Yii::app()->user->setFlash('Book_FLASH', 'Збережено');
 				$this->redirect(array('index'));
 			}
 		}
@@ -147,7 +147,7 @@ class BookController extends InsideController
 	 */
 	public function loadModel($id)
 	{
-		$model=GdzBook::model()->findByPk($id);
+		$model=Book::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

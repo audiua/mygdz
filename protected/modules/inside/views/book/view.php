@@ -7,16 +7,10 @@ $this->breadcrumbs=array(
 	$model->title,
 );
 
-$this->menu=array(
-	array('label'=>'List GdzBook', 'url'=>array('index')),
-	array('label'=>'Create GdzBook', 'url'=>array('create')),
-	array('label'=>'Update GdzBook', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete GdzBook', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage GdzBook', 'url'=>array('admin')),
-);
+
 ?>
 
-<h1>View GdzBook #<?php echo $model->id; ?></h1>
+<h1>View Book #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

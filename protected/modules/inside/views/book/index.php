@@ -18,13 +18,13 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
 <div class="clear"></div>
 
 
-<?php if(Yii::app()->user->hasFlash('CLAS_FLASH')):?>
+<?php if(Yii::app()->user->hasFlash('BOOK_FLASH')):?>
     <div class="alert alert-success" role="alert">
 	    <button type="button" class="close" data-dismiss="alert">
 		    <span aria-hidden="true">&times;</span>
 		    <span class="sr-only">Close</span>
 	    </button>
-    	<?php echo Yii::app()->user->getFlash('CLAS_FLASH'); ?>
+    	<?php echo Yii::app()->user->getFlash('BOOK_FLASH'); ?>
     </div>
         
 <?php endif; ?>
