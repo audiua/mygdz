@@ -147,8 +147,8 @@ return array(
 		),
 
 		'cache'=>array(
-            // 'class'=>'system.caching.CDummyCache',
-            'class'=>'system.caching.CFileCache',
+            'class'=>'system.caching.CDummyCache',
+            // 'class'=>'system.caching.CFileCache',
         ),
 
         'clientScript'=>array(
