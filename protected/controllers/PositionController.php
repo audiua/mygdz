@@ -28,7 +28,7 @@ class PositionController extends Controller{
 		// проверка последнего времени обновления ключевого слова
 		// если есть проверка меньше недели назад, то выходим
 		if($this->checkKeyword()){
-			Yii::app()->end();
+			// Yii::app()->end();
 		}
 
 		$newPosition = new KeywordPosition;

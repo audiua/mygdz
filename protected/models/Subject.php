@@ -40,10 +40,10 @@ class Subject extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, slug', 'required'),
+			array('title, slug, description', 'required'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, slug, create_time_, update_time', 'safe', 'on'=>'search'),
+			array('id, title, slug, create_time_, update_time, description', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -81,6 +81,7 @@ class Subject extends CActiveRecord
 			'id' => 'ID',
 			'title' => 'Title',
 			'slug' => 'Slug',
+			'description' => 'description',
 		);
 	}
 
@@ -105,6 +106,7 @@ class Subject extends CActiveRecord
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('slug',$this->slug,true);
+		$criteria->compare('description',$this->description,true);
 		
 
 		return new CActiveDataProvider($this, array(
