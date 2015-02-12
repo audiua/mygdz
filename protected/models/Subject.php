@@ -11,25 +11,13 @@
 class Subject extends CActiveRecord
 {
 
+	private $_url = null;
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
 		return 'subject';
-	}
-
-	private $_url;
-
-	public function getUrl($mode=null){
-	   if ($this->_url === null){
-	   		if($mode){
-	        	$this->_url = Yii::app()->createUrl('/'.$mode.'/'.$this->slug);
-	   		} else {
-	        	$this->_url = Yii::app()->createUrl('/'.$this->slug);
-	   		}
-	   }
-	   return $this->_url;
 	}
 
 	/**
@@ -132,5 +120,14 @@ class Subject extends CActiveRecord
 
 		return CHtml::listData(self::model()->findAll(), 'id', 'title');
 
+	}
+
+	public function getUrl($clas){
+	   if ($this->_url === null){
+	   		$url = $clas.'/'.$this->slug;
+	        $this->_url = Yii::app()->createUrl( '/' . $url );
+	        $this->_url .= '/';
+	   }
+	   return $this->_url;
 	}
 }

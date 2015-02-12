@@ -23,7 +23,7 @@ class SitemapController extends Controller{
             $sitemap->addUrl('/site/page?view=rules',Sitemap::MONTHLY, 0.1, 1409682509 );
             $sitemap->addUrl('/site/page?view=rightholder',Sitemap::MONTHLY, 0.1, 1409682509 );
             $sitemap->addModels( Clas::model()->findAll(), Sitemap::WEEKLY, 0.2);
-            $sitemap->addModels( Subject::model()->with('clas')->findAll(), Sitemap::DAILY, 0.5);
+            $sitemap->addModelsWithClas( Clas::model()->with('subject')->findAll(), Sitemap::DAILY, 0.5);
             $sitemap->addModels( Book::model()->published()->findAll(), Sitemap::DAILY, 0.8);
             $xml = $sitemap->render();
             // Yii::app()->cache->set('sitemap', $xml, 3600*24);

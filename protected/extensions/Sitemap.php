@@ -106,4 +106,35 @@ class Sitemap
             return $dateTime->format(DateTime::W3C);
         }
     }
+
+
+    /**
+     * @param CActiveRecord[] $models
+     * @param string $changeFreq
+     * @param float $priority
+     */
+    public function addModelsWithClas($models, $changeFreq=self::DAILY, $priority=0.5){
+        $host = Yii::app()->request->hostInfo;
+        foreach ($models as $model){
+
+            if($model->subject){
+                foreach($model->subject as $subject){
+
+                    $item = array(
+                        'loc' => $host . $subject->getUrl($model->slug),
+                        'changefreq' => $changeFreq,
+                        'priority' => $priority
+                    );
+
+
+                    if ($subject->hasAttribute('update_time')){
+                        $item['lastmod'] = $this->dateToW3C((int)$subject->update_time);
+                    }
+
+                    $this->items[] = $item;
+
+                }
+            }
+        }
+    }
 }
