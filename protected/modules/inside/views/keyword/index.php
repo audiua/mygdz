@@ -58,10 +58,10 @@ $this->breadcrumbs=array(
 			'type'=>'raw'
 		),
 
-		// 'create_time'=>array(
-		// 	'name'=>'create_time',
-		// 	'value'=>'Yii::app()->dateFormatter->format(\'yyyy-MM-dd H:mm\', $data->create_time)',
-		// ),
+		'create_time'=>array(
+			'name'=>'create_time',
+			'value'=>'Yii::app()->dateFormatter->format(\'yyyy-MM-dd H:mm\', $data->last[0]->create_time)',
+		),
 		// 'update_time'=>array(
 		// 	'name'=>'update_time',
 		// 	'value'=>'Yii::app()->dateFormatter->format(\'yyyy-MM-dd H:mm\', $data->update_time)'
