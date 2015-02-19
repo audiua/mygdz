@@ -1,6 +1,6 @@
 <div class="sidebar">
 
-<div class="sidebar-block">
+<div class="sidebar-block ref">
 	<!-- <div class="block-title">Block title</div> -->
 	<noindex>
 
