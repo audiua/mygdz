@@ -58,7 +58,7 @@ h1 {
   margin-bottom: 0px;
 }
 .footer .navbar .nav li {
-  margin-right: 45px;
+  margin-right: 12px;
 }
 .clear {
   clear: both;
@@ -246,4 +246,10 @@ h1 {
 .login-form {
   width: 300px;
   margin: 0 auto;
+}
+.marg_left_one{
+  margin-left: 20px;
+}
+.marg_left_two{
+  margin-left: 40px;
 }

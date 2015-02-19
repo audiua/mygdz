@@ -21,7 +21,10 @@
 				<?php  echo CHtml::link('Правила та Угоди', array('/site/page?view=rules'), array('rel'=>'nofollow')); ?>
 	        </li>
 	        <li>
-				<?php  echo CHtml::link('sitemap', array('/sitemap.xml'), array('rel'=>'nofollow', 'target'=>'_blank')); ?>
+				<?php  echo CHtml::link('Карта сайта', array('/sitemap'), array('rel'=>'nofollow', 'target'=>'_blank')); ?>
+	        </li>
+	        <li>
+				<?php  echo CHtml::link('sitemap.xml', array('/sitemap.xml'), array('rel'=>'nofollow', 'target'=>'_blank')); ?>
 	        </li>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->

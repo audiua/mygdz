@@ -698,4 +698,9 @@ public function actionJewel(){
 	}
 }
 
+public function actionSitemap(){
+	$model = Clas::model()->findAll();
+	$this->render('sitemap',array('model'=>$model));
+}
+
 }
