@@ -7,7 +7,8 @@ class TreeMenuWidget extends CWidget{
 	public function init(){
 		$this->params = $this->controller->param;
 		$this->params['clas'] = isset($this->params['clas'])?$this->params['clas']:'';
-		$this->params['subject'] = isset($this->params['subject'])?$this->params['subject']:'';
+    $this->params['subject'] = isset($this->params['subject'])?$this->params['subject']:'';
+		$this->params['book'] = isset($this->params['book'])?$this->params['book']:'';
 
         parent::init();
     }
@@ -46,7 +47,8 @@ class TreeMenuWidget extends CWidget{
            		foreach ($subject->book as $book) {
 				   	$data[$clas->id]['children'][$subject->id]['children'][$book->id] = array(
 						'id'   => $book->id,
-				       	'text' =>  '<a href= "/' . $clas->slug.'/' . $subject->slug.'/'.$book->slug.'">'.$book->author.'</a>',
+                // 'text' =>  '<a href= "/' . $clas->slug.'/' . $subject->slug.'/'.$book->slug.'">'.$book->author.'</a>',
+            'text' =>  ($book->slug == $this->params['book']) ? '<span class="hover">'.$book->author.'</span>' : '<a href= "/' . $clas->slug.'/' . $subject->slug.'/'.$book->slug.'">'.$book->author.'</a>',
 				       	'expanded' => false,
 				   	);
 				}
