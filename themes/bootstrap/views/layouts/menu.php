@@ -2,7 +2,8 @@
   <div class="container">
 
 	<div class="navbar-header">
-	  <a class="navbar-brand" href="/">ГДЗ Україна</a>
+	  <!-- <a class="navbar-brand" href="/">ГДЗ Україна</a> -->
+	  <?php echo ($this->action->id != 'index') ? CHtml::link('ГДЗ Україна', '/', array('class'=>'navbar-brand')): '<span class="navbar-brand">ГДЗ Україна</span>' ?>
 	</div>
 
 	<!-- Collect the nav links, forms, and other content for toggling -->

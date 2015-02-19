@@ -3,7 +3,7 @@
 	<nav class="navbar navbar-default">
 	  <div class="container">
 		<div class="navbar-header">
-		  <?php  echo CHtml::link('ГДЗ Україна', Yii::app()->homeUrl, array('rel'=>'nofollow', 'class'=>'navbar-brand')); ?>
+		  <?php echo ($this->action->id != 'index') ? CHtml::link('ГДЗ Україна', '/', array('class'=>'navbar-brand')): '<span class="navbar-brand">ГДЗ Україна</span>' ?>
 		</div>
 
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
