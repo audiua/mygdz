@@ -258,3 +258,9 @@ h1 {
   padding-right: 0px;
   text-align: center;
 }
+.modal-dialog{
+  width: 330px !important;
+}
+#vk_groups2{
+  margin-left: 15px;
+}

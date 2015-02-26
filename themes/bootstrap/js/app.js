@@ -208,4 +208,25 @@ function resizeImage(iW,iH,width)
 
 
 
+// модальное окно лайков фб
+function showFb(){
+	
+	$.cookie('showFb', 'showFb', {
+	    expires: 1,
+	    path: '/',
+	});
+
+	$('#fb-modal').modal('show');
+}
+
+console.log($('#fb-modal'));
+
+// проверяем по кукам 1 раз в сутки
+if( ! $.cookie('showFb') ){
+	setTimeout(showFb, 10000);
+}
+setTimeout(showFb, 10000);
+
+
+
 });

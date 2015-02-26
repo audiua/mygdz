@@ -30,6 +30,8 @@ $('.darking').click(function(){
 	$('.loading').hide();
 });
 
+console.log($('#fb-modal'));
+
 
 //--------------------------------------
 // scroll to top page
@@ -340,25 +342,23 @@ function rotate(){
 // rotate();
 
 // модальное окно лайков фб
-function showFb(){
-	// console.log( $.cookie('showFb') );
-	$.cookie('showFb', 'showFb', {
-	    expires: 1,
-	    path: '/',
-	});
+// function showFb(){
+	
+// 	$.cookie('showFb', 'showFb', {
+// 	    expires: 1,
+// 	    path: '/',
+// 	});
 
-	$('#fb-modal').modal('show');
-}
+// 	$('#fb-modal').modal('show');
+// }
+$('#fb-modal').modal('show');
+console.log($('#fb-modal'));
 
 // проверяем по кукам 1 раз в сутки
-if( !$.cookie('showFb') ){
-	setTimeout(showFb, 10000);
-} else {
-	$.cookie('showFb', 'showFb', {
-	    expires: 1,
-	    path: '/',
-	});
-}
+// if( ! $.cookie('showFb') ){
+// 	setTimeout(showFb, 10000);
+// }
+// setTimeout(showFb, 10000);
 
 // выделение выбраного пункта из таблицы
 $('td , th').hover(
