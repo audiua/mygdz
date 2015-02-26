@@ -219,14 +219,10 @@ function showFb(){
 	$('#fb-modal').modal('show');
 }
 
-console.log($('#fb-modal'));
-
 // проверяем по кукам 1 раз в сутки
 if( ! $.cookie('showFb') ){
 	setTimeout(showFb, 10000);
 }
-setTimeout(showFb, 10000);
-
 
 
 });
