@@ -49,6 +49,8 @@
 			VK.Widgets.Group("vk_groups2", {mode: 0, width: "300", height: "320", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 86651632);
 			</script>
 
+
+
 			<div class="clear"></div>
 
 	    	<div class="modal-footer">

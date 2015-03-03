@@ -224,5 +224,4 @@ if( ! $.cookie('showFb') ){
 	setTimeout(showFb, 10000);
 }
 
-
 });
