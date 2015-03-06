@@ -5,7 +5,7 @@
 	<noindex>
 
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- sidebar big -->
+		<!-- my небоскреб -->
 		<ins class="adsbygoogle"
 		     style="display:inline-block;width:300px;height:600px"
 		     data-ad-client="ca-pub-9657826060070920"
