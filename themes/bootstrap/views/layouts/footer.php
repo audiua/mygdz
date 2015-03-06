@@ -38,10 +38,6 @@
 	    	<div class="modal-header">
 	    		<div class="modal-title" id="myModalLabel">Підписуйся на публічну сторінку <span class="shkolyar blue">mygdz.pp.ua</span> в <span class="shkolyar blue">Vkontakte</span></div>
 	      	</div>
-	    	
-
-
-	       	 <script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
 
 			<!-- VK Widget -->
 			<div id="vk_groups2"></div>
