@@ -18,7 +18,7 @@
 
 <div class="clear"></div>
 
-<div class="full-banner">
+<div id="ad1" class="full-banner">
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<!-- my полный баннер -->
 	<ins class="adsbygoogle"
