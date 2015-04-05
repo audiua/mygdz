@@ -161,7 +161,7 @@ return array(
 			'scriptMap'=>array(
 				'jquery.js'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
 				// 'jquery.cookie.js'=>'/js/jquery1.11.1.min.js',
-				'jquery.min.js'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js',
+				'jquery.min.js'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
 			)
         ),
 
