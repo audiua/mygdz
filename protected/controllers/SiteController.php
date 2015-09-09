@@ -59,7 +59,14 @@ public function actionIndex(){
 
 		);
 
-		$this->pageTitle = 'Готові домашні завдання';
+		$activePage = Yii::app()->request->getParam('p','');
+		if( $activePage ){
+			$page = ' / Сторінка '.$activePage;
+		} else {
+			$page = '';
+		}
+
+		$this->pageTitle = 'Готові домашні завдання'.$page;
 		$this->canonical = Yii::app()->createAbsoluteUrl('/');
 
 		$criteria = new CDbCriteria;
@@ -97,6 +104,13 @@ public function actionClas($clas){
 
 		);
 
+		$activePage = Yii::app()->request->getParam('p','');
+		if( $activePage ){
+			$page = ' / Сторінка '.$activePage;
+		} else {
+			$page = '';
+		}
+
 		$this->keywords = 
 			'ГДЗ - готові домашні завдання '.$clas.' клас, 
 			гдз '.$clas. ' клас, 
@@ -111,7 +125,7 @@ public function actionClas($clas){
 		// $this->pageTitle = 'SHKOLYAR.INFO - '.$this->h1;
 		// $this->canonical = Yii::app()->createAbsoluteUrl('/'.$clas);
 
-		$this->setMeta();
+		$this->setMeta($page);
 
 		$criteria = new CDbCriteria;
 		$criteria->condition = 't.class_id='.$this->clasModel->id;
@@ -149,6 +163,13 @@ public function actionSubject($clas, $subject){
 		$this->subjectModel = $this->loadSubject($subject);
 		// d($this->subjectModel);
 
+		$activePage = Yii::app()->request->getParam('p','');
+		if( $activePage ){
+			$page = ' / Сторінка '.$activePage;
+		} else {
+			$page = '';
+		}
+
 		$this->keywords = 'ГДЗ - готові домашні завдання ' . $this->subjectModel->title . ' ' 
 			.$clas.' клас, гдз '. $this->subjectModel->title . ' ' .$clas.' клас, гдз онлайн '
 			. $this->subjectModel->title . ' ' .$clas. ' клас, гдз '. $this->subjectModel->title . ' ' .$clas. ' клас Україна, гдз решебники '
@@ -160,7 +181,7 @@ public function actionSubject($clas, $subject){
 		// $this->h1 = 'ГДЗ '.(int)$clas.' клас '. $this->subjectModel->subject->title;
 		// $this->pageTitle = 'SHKOLYAR.INFO - '.$this->h1;
 		// $this->canonical = Yii::app()->createAbsoluteUrl('/'.$clas.'/'.$subject);
-		$this->setMeta();
+		$this->setMeta($page);
 
 		$criteria = new CDbCriteria;
 		$criteria->condition = 't.class_id='.$this->clasModel->id;
@@ -553,7 +574,7 @@ private function checkBook($book){
 	}
 }
 
-private function setMeta(){
+private function setMeta($page=''){
 	if($this->clasModel){
 		$this->h1 = 'Готові домашні завдання '. $this->clasModel->slug.' клас';
 		$this->canonical = '/'.$this->clasModel->slug;
@@ -571,7 +592,7 @@ private function setMeta(){
 	}
 
 	$this->canonical = Yii::app()->createAbsoluteUrl($this->canonical);
-	$this->pageTitle = $this->h1;
+	$this->pageTitle = $this->h1 . $page;
 }
 
 
