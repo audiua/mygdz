@@ -210,19 +210,19 @@ function resizeImage(iW,iH,width)
 
 
 // модальное окно лайков фб
-function showFb(){
+// function showFb(){
 	
-	$.cookie('showFb', 'showFb', {
-	    expires: 1,
-	    path: '/',
-	});
+// 	$.cookie('showFb', 'showFb', {
+// 	    expires: 1,
+// 	    path: '/',
+// 	});
 
-	$('#fb-modal').modal('show');
-}
+// 	$('#fb-modal').modal('show');
+// }
 
 // проверяем по кукам 1 раз в сутки
-if( ! $.cookie('showFb') ){
-	setTimeout(showFb, 10000);
-}
+// if( ! $.cookie('showFb') ){
+// 	setTimeout(showFb, 10000);
+// }
 
 });
