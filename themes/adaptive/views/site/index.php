@@ -2,7 +2,7 @@
 
 <?php $this->widget('DataBookWidget', array('model'=>$books)); ?>
 
-<div class="description hidden-xs">
+<div class="description">
 	<p>
 		На данному сайті зібрані рішення домашніх завдань для середніх загальноосвітніх шкіл <strong>України</strong>.<br>
 		Якщо у вас виникли труднощі з виконанням домашніх завдань або Ви сумніваєтесь в правильності відповідей, то
