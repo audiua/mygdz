@@ -107,7 +107,7 @@
 
 					  		?>
 
-					  		<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 no task-one task-one-<?php echo $this->params['clas']; ?> <?php echo $active; ?>" >
+					  		<div class="col-xs-2 col-sm-1 col-md-1 col-lg-1 no task-one task-one-<?php echo $this->params['clas']; ?> <?php echo $active; ?>" >
 					  			<p class="task-number" data-url="<?php echo (int)$this->params['nested']; ?>/<?php echo (int)$i; ?>/<?php echo (int)$task; ?>" >
 					  				<?php echo (int)$task; ?>
 					  			</p>

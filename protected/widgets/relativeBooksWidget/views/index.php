@@ -1,39 +1,46 @@
+<div class="items">
+<?php 
+	
 
-		<?php 
-			
+foreach( $this->model as $one): 
 
-			foreach( $this->model as $one): 
-			$path = 'images/gdz/'.$one->clas->slug.'/'.$one->subject->slug.'/'.$one->slug.'/book/'.$one->img; ?>
-			
-			<div class="col-xs-3 one-book"> 
+	$path = 'images/gdz/'.$one->clas->slug.'/'.$one->subject->slug.'/'.$one->slug.'/book';?>
 
-				<?php
 
-				echo CHtml::link(
 
-				CHtml::image( 
-					Yii::app()->baseUrl . '/' . $path, 
-					'ГДЗ - ' . $one->clas->slug . ' клас ' . $one->subject->title . ' ' .  $one->author, 
-					array(
-						'class'=>'', 
-						'title'=>'ГДЗ - ' . $one->clas->slug . ' клас ' . $one->subject->title . ' ' .  $one->author
-					)
-				), array( $one->clas->slug.'/'.$one->subject->slug.'/'.$one->slug) ); ?>
+	<div class="item col-lg-3 col-md-4 col-sm-4 col-xs-12"> 
 
-				<div class="">
-					<div class="book-author"> <?php echo $one->author; ?></div>
-					<div class="book-subject"> <?php echo $one->title; ?></div>
-					<div class="book-clas"><?php echo $one->clas->slug; ?> клас</div>
-					<?php 
-						if( !empty($one->properties) ){
-							echo '<div class="desc">'.$one->properties.'</div>';
-						}
-					?>
+		<?php
 
-				</div>
-			</div>
+		echo CHtml::link(
 
-		<?php endforeach; ?>
+
+		CHtml::image( 
+			// $one->getThumb(165,250,'crop'),
+			Yii::app()->baseUrl . '/' . $path.'/'.$one->img, 
+			'ГДЗ - ' . $one->clas->slug . ' клас ' . $one->subject->title . ' ' .  $one->author, 
+			array(
+				'class'=>'', 
+				'title'=>'ГДЗ - ' . $one->clas->slug . ' клас ' . $one->subject->title . ' ' .  $one->author
+			)
+		), array( $one->clas->slug.'/'.$one->subject->slug.'/'.$one->slug) ); ?>
+
+
+		<?= CHtml::link('<div>'.$one->author.' '.$one->title.' '.$one->clas->slug.' клас</div>', $one->clas->slug.'/'.$one->subject->slug.'/'.$one->slug); ?>
+			<?php 
+				if( !empty($one->properties) ){
+					echo '<div class="desc">'.$one->properties.'</div>';
+				}
+			?>
+	</div>
+
+<?php endforeach; ?>
+</div>
+
+
+
+					
+
 
 
 

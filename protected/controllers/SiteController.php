@@ -303,7 +303,7 @@ public function actionTask($clas, $subject, $book, $task){
 				.' клас '.$this->bookModel->author
 				.' рішення до завдяння '
 				. $this->param['task'],
-			array('class'=>' task-img panzoom ', 'data-width'=>$pathImg['width'],'data-height'=>$pathImg['height'], 'title'=> 'ГДЗ - готові домашні завдання ' .$this->subjectModel->title . ' '
+			array('class'=>'img-responsive ', 'data-width'=>$pathImg['width'],'data-height'=>$pathImg['height'], 'title'=> 'ГДЗ - готові домашні завдання ' .$this->subjectModel->title . ' '
 				. $clas .' клас '.$this->bookModel->author.' рішення до завдяння '. $task));
 
 			$this->endCache(); 

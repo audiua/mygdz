@@ -79,7 +79,7 @@
 
 				  		// echo '<div class="col-md-1 no task-one">';
 
-				  		echo CHtml::link( '<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 no task-one task-one-'.$this->params['clas'].' ' .$active.' "><p class="'.$color.'">'.(int)$task.'</p></div>', array('/'.$this->params['clas'].'/'
+				  		echo CHtml::link( '<div class="col-xs-2 col-sm-1 col-md-1 col-lg-1 no task-one task-one-'.$this->params['clas'].' ' .$active.' "><p class="'.$color.'">'.(int)$task.'</p></div>', array('/'.$this->params['clas'].'/'
 				  			.$this->params['subject'].'/'
 				  			.$this->params['book'].'/'.(int)substr($i, 0,2).'/'.(int)$task));
 

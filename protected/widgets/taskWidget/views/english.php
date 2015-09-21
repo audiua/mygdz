@@ -45,7 +45,7 @@ foreach( $model as $i => $one ){
 				$active = 'task-active';	
 			}
 
-			echo CHtml::link( '<div class=" col-xs-1 col-sm-1 col-md-1 col-lg-1 no task-one task-lesson '.$active.' ">ex. '.(int)$task.'</div>', array('/'.$this->params['clas'].'/'
+			echo CHtml::link( '<div class=" col-xs-2 col-sm-1 col-md-1 col-lg-1 no task-one task-lesson '.$active.' ">ex. '.(int)$task.'</div>', array('/'.$this->params['clas'].'/'
 				.$this->params['subject'].'/'
 				.$this->params['book'].'/'
 				.$countTask.'/'

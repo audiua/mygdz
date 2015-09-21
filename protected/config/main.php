@@ -11,7 +11,7 @@ return array(
 	'name'=>'ГДЗ',
 	'sourceLanguage'=>'en',
 	'language'=>'ru',
-	'theme'=>'bootstrap',
+	'theme'=>'adaptive',
 	'defaultController'=>'site',
 
 	// preloading 'log' component

@@ -128,6 +128,7 @@ class LinkPager extends CLinkPager
 	 */
 	public function run()
 	{
+		echo '<div class="clearfix"></div>';
 		$this->registerClientScript();
 		// echo '<noindex>';
 		$buttons=$this->createPageButtons();

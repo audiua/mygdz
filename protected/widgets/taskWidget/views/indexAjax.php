@@ -38,7 +38,7 @@ foreach( $model as $i => $one ){
 	}
 ?>
 
-	<div class="col-xs-1 task-one <?= $active; ?>">
+	<div class="col-xs-2 col-sm-1 col-md-1 col-lg-1 task-one <?= $active; ?>">
 		<p class="task-number " data-url="<?php echo (int)$one; ?>" >
 			<?php echo (int)$one; ?>
 		</p>
