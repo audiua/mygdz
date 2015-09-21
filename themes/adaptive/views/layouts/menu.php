@@ -18,7 +18,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?= $clas->slug; ?> клас<span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<?php foreach( $clas->subject as $subject ) : ?>
-								<li><a href="<?= $clas->slug . '/' . $subject->slug; ?>"><?= $subject->title; ?></a></li>
+								<li><a href="<?='/'.$clas->slug . '/' . $subject->slug; ?>"><?= $subject->title; ?></a></li>
 							<?php endforeach; ?>
 						</ul>
 					</li>
