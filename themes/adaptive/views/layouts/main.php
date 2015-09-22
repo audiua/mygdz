@@ -14,8 +14,8 @@
 		<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
 		<!-- Bootstrap -->
-		<link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min.css" rel="stylesheet">
-		<link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css" rel="stylesheet">
+		<!-- <link href="<?php // echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min.css" rel="stylesheet"> -->
+		<!-- <link href="<?php // echo Yii::app()->theme->baseUrl; ?>/css/style.css" rel="stylesheet"> -->
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,6 +26,17 @@
 
 	</head>
 	<body>
+
+
+		<script>
+			var ms=document.createElement("link");ms.rel="stylesheet";
+			ms.href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min.css";document.getElementsByTagName("head")[0].appendChild(ms);
+			var ms=document.createElement("link");ms.rel="stylesheet";
+			ms.href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css";document.getElementsByTagName("head")[0].appendChild(ms);
+		</script>
+
+
+
 
 		
 		<div class="container">
