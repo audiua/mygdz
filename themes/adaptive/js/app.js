@@ -1,49 +1,46 @@
-$(document).ajaxSend(function(event, request, settings) {
-
-	$('.task-title').show();
-	$('.task-separator').show();
-	$('#inverted-contain').show();
-    $('.loading').show();
-    $('.darking').show();
-    $('body,html').animate({scrollTop:300},100);
-
-    // $('body,html').scrollTo('.task', 100, { offset:-100 });
-});
-
-$(document).ajaxComplete(function(event, request, settings) {
-    
-	var contHeight = $('.content').outerHeight();
-	var sidebarHeight = $('.sidebar').outerHeight();
-	// console.log('resize');
-	// console.log(sidebarHeight);
-	if(contHeight > sidebarHeight){
-		$('.sidebar').height(contHeight);
-	}
-	
-    $('.loading').hide();
-    $('.darking').hide();
-});
-
-$('.b-left').click(function(){
-	var activeTask = $('.task-one').filter('.task-active');
-	var prevTask = $(activeTask).prev('.task-one');
-	if(activeTask && prevTask){
-		$(prevTask).find('.task-number').click();
-	}
-});
-
-$('.b-right').click(function(){
-	var activeTask = $('.task-one').filter('.task-active');
-	var nextTask = $(activeTask).next('.task-one');
-	if(activeTask && nextTask){
-		$(nextTask).find('.task-number').click();
-	}
-});
-
-
-
-
 $(document).ready(function () {
+
+	$(document).ajaxSend(function(event, request, settings) {
+
+		$('.task-title').show();
+		$('.task-separator').show();
+		$('#inverted-contain').show();
+	    $('.loading').show();
+	    $('.darking').show();
+	    $('body,html').animate({scrollTop:300},100);
+
+	    // $('body,html').scrollTo('.task', 100, { offset:-100 });
+	});
+
+	$(document).ajaxComplete(function(event, request, settings) {
+	    
+		var contHeight = $('.content').outerHeight();
+		var sidebarHeight = $('.sidebar').outerHeight();
+		// console.log('resize');
+		// console.log(sidebarHeight);
+		if(contHeight > sidebarHeight){
+			$('.sidebar').height(contHeight);
+		}
+		
+	    $('.loading').hide();
+	    $('.darking').hide();
+	});
+
+	$('.b-left').click(function(){
+		var activeTask = $('.task-one').filter('.task-active');
+		var prevTask = $(activeTask).prev('.task-one');
+		if(activeTask && prevTask){
+			$(prevTask).find('.task-number').click();
+		}
+	});
+
+	$('.b-right').click(function(){
+		var activeTask = $('.task-one').filter('.task-active');
+		var nextTask = $(activeTask).next('.task-one');
+		if(activeTask && nextTask){
+			$(nextTask).find('.task-number').click();
+		}
+	});
 
 $('.darking').click(function(){
 	$(this).hide();
