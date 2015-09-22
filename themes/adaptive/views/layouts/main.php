@@ -47,6 +47,12 @@
 
 	</head>
 	<body>
+		<script>
+			var ms=document.createElement("link");ms.rel="stylesheet";
+			ms.href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min.css";document.getElementsByTagName("head")[0].appendChild(ms);
+			var ms=document.createElement("link");ms.rel="stylesheet";
+			ms.href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css";document.getElementsByTagName("head")[0].appendChild(ms);
+		</script>
 		<div class="container">
 			<div class="row">
 				<?php $this->renderPartial('//layouts/menu'); ?>
@@ -80,19 +86,11 @@
 			</div>
 		</div>
 
-		<script>
-			var ms=document.createElement("link");ms.rel="stylesheet";
-			ms.href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min.css";document.getElementsByTagName("head")[0].appendChild(ms);
-			var ms=document.createElement("link");ms.rel="stylesheet";
-			ms.href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css";document.getElementsByTagName("head")[0].appendChild(ms);
-		</script>
-
-
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		
 		<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script> -->
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<!-- <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min.js"></script> -->
-		<!-- <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/app.js"></script> -->
+		<!-- <script src="<?php // echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min.js"></script> -->
+		<!-- <script src="<?php // echo Yii::app()->theme->baseUrl; ?>/js/app.js"></script> -->
 	</body>
 </html>
