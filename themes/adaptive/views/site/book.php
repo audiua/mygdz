@@ -5,24 +5,6 @@
 <div class="separator"></div>
 <div class="clearfix"></div>
 
-<?php Yii::import('ext.mobileDetect.Mobile_Detect');
-            $detect = new Mobile_Detect(); 
-if(!$detect->isMobile()):?>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- my full ban top -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
-     data-ad-client="ca-pub-9657826060070920"
-     data-ad-slot="9080670692"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<?php endif; ?>
-
-
-
 <div class="task">
 	<!-- <section id="inverted-contain">
 		<div class="loading"></div>
@@ -42,6 +24,22 @@ if(!$detect->isMobile()):?>
 		  </style>
 	</section> -->
 </div>
+
+<?php Yii::import('ext.mobileDetect.Mobile_Detect');
+            $detect = new Mobile_Detect(); 
+if(!$detect->isMobile()):?>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- my full ban top -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-9657826060070920"
+     data-ad-slot="9080670692"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<?php endif; ?>
 
 <?php if($detect->isMobile()):?>
 
