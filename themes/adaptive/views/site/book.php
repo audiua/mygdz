@@ -19,11 +19,6 @@ if(!$detect->isMobile()):?>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-<?php elseif: ?>
-
-	
-
-
 <?php endif; ?>
 
 
