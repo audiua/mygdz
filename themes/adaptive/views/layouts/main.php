@@ -12,6 +12,27 @@
     	<meta name="keywords" content="<?php echo CHtml::encode($this->keywords); ?>" />
 
 		<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+		<?php 
+		$cs=Yii::app()->clientScript;
+        // $cs->coreScriptPosition = CClientScript::POS_HEAD;
+		$cs->registerCoreScript('jquery'); ?>
+
+		<?php 
+
+            $path = Yii::app()->theme->basePath;
+            $mainAssets = Yii::app()->AssetManager->publish($path);
+            // Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/jquery.cookie.js', CClientScript::POS_END);
+            Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/bootstrap.min.js', CClientScript::POS_END);
+            Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/app.js', CClientScript::POS_END);
+            // Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/base64.js', CClientScript::POS_END);
+            // Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/less.js');
+            // Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/bootstrap3.2.0.min.js', CClientScript::POS_END);
+            // Yii::app()->getClientScript()->registerCssFile($mainAssets.'/css/bootstrap3.2.0.min.css');
+            // Yii::app()->getClientScript()->registerCssFile($mainAssets.'/css/app.min.css');
+
+         ?>
+		
+
 
 		<!-- Bootstrap -->
 		<!-- <link href="<?php // echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min.css" rel="stylesheet"> -->
@@ -75,9 +96,9 @@
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
+		<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script> -->
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min.js"></script>
-		<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/app.js"></script>
+		<!-- <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min.js"></script> -->
+		<!-- <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/app.js"></script> -->
 	</body>
 </html>
