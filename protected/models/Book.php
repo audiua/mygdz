@@ -205,18 +205,18 @@ class Book extends CActiveRecord
 			return '/images/gdz/' . $this->clas->slug . '/'. $this->subject->slug . '/'. $this->slug .'/book'.$this->slug . '.' . $this->img;
 		}
 
-		$fileName = $this->slug . '_' . $width . 'x' . $height . '.' . $this->img;
+		$fileName = $width . 'x' . $height . '_' . $this->img;
 		$filePath = $dir . $fileName;
 		if (!is_file($filePath)) {
 			if ($mode == 'resize') {
-				Yii::app()->image->load($originFile)->resize($width, $height)->save($filePath);
+				Yii::app()->image->load($originFile)->resize($width, $height)->quality(40)->save($filePath);
 			} else {
 				Yii::app()->image->cropSave($originFile, $width, $height, $filePath);
 			}
 		}
 
 		// return '/img/writing/thumbs/'.$this->uniqKnowallId(). '/'. $fileName;
-		return '/images/gdz/' . $this->clas->slug . '/'. $this->subject->slug . '/'. $this->slug .'/book'.$fileName;
+		return '/images/gdz/' . $this->clas->slug . '/'. $this->subject->slug . '/'. $this->slug .'/book/'.$fileName;
 	}
 
 }

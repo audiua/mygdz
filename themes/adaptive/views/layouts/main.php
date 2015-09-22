@@ -14,7 +14,7 @@
 		<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
 		<!-- Bootstrap -->
-		<link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" rel="stylesheet">
+		<link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min.css" rel="stylesheet">
 		<link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css" rel="stylesheet">
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -66,7 +66,7 @@
 		
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.js"></script>
+		<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min.js"></script>
 		<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/app.js"></script>
 	</body>
 </html>

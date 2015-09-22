@@ -16,8 +16,8 @@ foreach( $this->model as $one):
 
 
 		CHtml::image( 
-			// $one->getThumb(165,250,'crop'),
-			Yii::app()->baseUrl . '/' . $path.'/'.$one->img, 
+			$one->getThumb(140,200,'resize'),
+			// Yii::app()->baseUrl . '/' . $path.'/'.$one->img, 
 			'ГДЗ - ' . $one->clas->slug . ' клас ' . $one->subject->title . ' ' .  $one->author, 
 			array(
 				'class'=>'', 

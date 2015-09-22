@@ -12,8 +12,8 @@ $path = 'images/gdz/'.$data->clas->slug.'/'.$data->subject->slug.'/'.$data->slug
 
 
 	CHtml::image( 
-		// $data->getThumb(165,250,'crop'),
-		Yii::app()->baseUrl . '/' . $path.'/'.$data->img, 
+		$data->getThumb(140,200,'resize'),
+		// Yii::app()->baseUrl . '/' . $path.'/'.$data->img, 
 		'ГДЗ - ' . $data->clas->slug . ' клас ' . $data->subject->title . ' ' .  $data->author, 
 		array(
 			'class'=>'', 
