@@ -47,19 +47,6 @@
 
 	</head>
 	<body>
-
-
-		<script>
-			var ms=document.createElement("link");ms.rel="stylesheet";
-			ms.href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min.css";document.getElementsByTagName("head")[0].appendChild(ms);
-			var ms=document.createElement("link");ms.rel="stylesheet";
-			ms.href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css";document.getElementsByTagName("head")[0].appendChild(ms);
-		</script>
-
-
-
-
-		
 		<div class="container">
 			<div class="row">
 				<?php $this->renderPartial('//layouts/menu'); ?>
@@ -92,6 +79,13 @@
 				<?php $this->renderPartial('//layouts/footer'); ?>
 			</div>
 		</div>
+
+		<script>
+			var ms=document.createElement("link");ms.rel="stylesheet";
+			ms.href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min.css";document.getElementsByTagName("head")[0].appendChild(ms);
+			var ms=document.createElement("link");ms.rel="stylesheet";
+			ms.href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css";document.getElementsByTagName("head")[0].appendChild(ms);
+		</script>
 
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
