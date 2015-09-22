@@ -5,9 +5,9 @@ $(document).ajaxSend(function(event, request, settings) {
 	$('#inverted-contain').show();
     $('.loading').show();
     $('.darking').show();
-    $('body,html').animate({scrollTop:300},900);
+    // $('body,html').animate({scrollTop:300},900);
 
-    // $('body,html').scrollTo('.task', 1000, { offset:-100 });
+    $('body,html').scrollTo('.task', 100, { offset:-100 });
 });
 
 $(document).ajaxComplete(function(event, request, settings) {

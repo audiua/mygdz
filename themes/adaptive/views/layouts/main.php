@@ -65,7 +65,7 @@
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		
-		<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script> -->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.js"></script>
 		<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/app.js"></script>
