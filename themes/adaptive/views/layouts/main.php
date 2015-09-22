@@ -31,23 +31,22 @@
 		<div class="container">
 			<div class="row">
 				<?php $this->renderPartial('//layouts/menu'); ?>
-
-				<div class="adaptive-banner">
-					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-					<!-- my_adaptive_top -->
-					<ins class="adsbygoogle"
-					     style="display:block"
-					     data-ad-client="ca-pub-9657826060070920"
-					     data-ad-slot="5318848293"
-					     data-ad-format="auto"></ins>
-					<script>
-					(adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
-				</div>
-
 			</div>
 			<div class="row">
 				<div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
+
+					<div class="adaptive-banner">
+						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+						<!-- my_adaptive_top -->
+						<ins class="adsbygoogle"
+						     style="display:block"
+						     data-ad-client="ca-pub-9657826060070920"
+						     data-ad-slot="5318848293"
+						     data-ad-format="auto"></ins>
+						<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
+					</div>
 
                 	<?= $content; ?>
 
