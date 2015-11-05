@@ -13,6 +13,7 @@
 
     	<link rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min.css">
     	<link rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css">
+    	<link rel="stylesheet" href="/css/social-likes_flat.css">
 
 		<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 		<?php 
@@ -26,8 +27,8 @@
             // Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/jquery.cookie.js', CClientScript::POS_END);
             Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/bootstrap.min.js', CClientScript::POS_END);
             Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/app.js', CClientScript::POS_END);
+            Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/social-likes.min.js', CClientScript::POS_END);
          ?>
-
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
