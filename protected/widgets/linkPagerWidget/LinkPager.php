@@ -129,6 +129,16 @@ class LinkPager extends CLinkPager
 	public function run()
 	{
 		echo '<div class="clearfix"></div>';
+		echo '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- my_mobi_middle -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-9657826060070920"
+     data-ad-slot="9749047893"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>';
+		echo '<div class="clearfix"></div>';
 		$this->registerClientScript();
 		// echo '<noindex>';
 		$buttons=$this->createPageButtons();
