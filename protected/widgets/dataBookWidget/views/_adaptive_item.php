@@ -17,7 +17,9 @@ $path = 'images/gdz/'.$data->clas->slug.'/'.$data->subject->slug.'/'.$data->slug
 		'ГДЗ - ' . $data->clas->slug . ' клас ' . $data->subject->title . ' ' .  $data->author, 
 		array(
 			'class'=>'', 
-			'title'=>'ГДЗ - ' . $data->clas->slug . ' клас ' . $data->subject->title . ' ' .  $data->author
+			'title'=>'ГДЗ - ' . $data->clas->slug . ' клас ' . $data->subject->title . ' ' .  $data->author,
+			'width'=>'140',
+			'heigth'=>'200'
 		)
 	), array( $data->clas->slug.'/'.$data->subject->slug.'/'.$data->slug) ); ?>
 

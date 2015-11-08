@@ -35,3 +35,12 @@ Header append Vary User-Agent
     ExpiresDefault "access plus 22 days"
 
 </ifmodule>
+
+<IfModule pagespeed_module>
+    ModPageSpeed off
+    ModPagespeedRewriteLevel CoreFilters
+    ModPagespeedEnableFilters rewrite_css,sprite_images,pedantic,remove_comments
+    ModPagespeedEnableFilters trim_urls
+    ModPagespeedEnableFilters local_storage_cache
+    ModPagespeedEnableFilters insert_dns_prefetch
+</IfModule>

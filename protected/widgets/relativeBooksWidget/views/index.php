@@ -21,7 +21,9 @@ foreach( $this->model as $one):
 			'ГДЗ - ' . $one->clas->slug . ' клас ' . $one->subject->title . ' ' .  $one->author, 
 			array(
 				'class'=>'', 
-				'title'=>'ГДЗ - ' . $one->clas->slug . ' клас ' . $one->subject->title . ' ' .  $one->author
+				'title'=>'ГДЗ - ' . $one->clas->slug . ' клас ' . $one->subject->title . ' ' .  $one->author,
+				'width'=>'140',
+				'heigth'=>'200'
 			)
 		), array( $one->clas->slug.'/'.$one->subject->slug.'/'.$one->slug) ); ?>
 

@@ -5,8 +5,9 @@ $path = 'images/gdz/'.$this->params['clas'].'/'.$this->params['subject'].'/'.$th
 <div class="row">
 	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 book">
 		
-		<?php echo CHtml::image(Yii::app()->baseUrl . '/' . $path.'/'.$this->model->img, 'ГДЗ' . $this->model->clas->slug .' клас '. $this->model->title . ' ' . $this->model->author, 
-			array('class'=>'')); 
+		<?php //echo CHtml::image(Yii::app()->baseUrl . '/' . $path.'/'.$this->model->img, 'ГДЗ ' . $this->model->clas->slug .' клас '. $this->model->title . ' ' . $this->model->author, 
+		echo CHtml::image($this->model->getThumb(200,250,'resize'), 'ГДЗ ' . $this->model->clas->slug .' клас '. $this->model->title . ' ' . $this->model->author, 
+			array('class'=>'', 'width'=>'200', 'height'=>'250')); 
 		?> 
 	</div>
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-6 book-desc">
