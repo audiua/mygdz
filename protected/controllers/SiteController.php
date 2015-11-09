@@ -59,9 +59,8 @@ public function filters() {
  * when an action is not explicitly requested by users.
  */
 public function actionIndex(){
-
 	// TODO - закешировать на 4 hour
-	if($this->beginCache('main-gdz-page', array('duration'=>self::CACHE_TIME, 'varyByParam'=>array('p'))) ){
+	if($this->beginCache('main-gdz-page-'.Yii::app()->theme->name , array('duration'=>self::CACHE_TIME, 'varyByParam'=>array('p'))) ){
 
 		$this->breadcrumbs = array(
 
@@ -101,7 +100,7 @@ public function actionClas($clas){
 	// d();
 
 	// TODO - закешировать на сутки
-	if($this->beginCache('gdz_clas_page', array('duration'=>self::CACHE_TIME, 'varyByParam'=>array('clas', 'p'))) ){
+	if($this->beginCache('gdz_clas_page'.Yii::app()->theme->name, array('duration'=>self::CACHE_TIME, 'varyByParam'=>array('clas', 'p'))) ){
 		
 		$this->checkClas($clas);
 		$this->clasModel = $this->loadClas($clas);
@@ -162,7 +161,7 @@ public function actionSubject($clas, $subject){
 	// d();
 
 	// TODO - закешировать на сутка
-	if($this->beginCache('gdz_subject_page', array('duration'=>self::CACHE_TIME, 'varyByParam'=>array('clas', 'subject', 'p'))) ){
+	if($this->beginCache('gdz_subject_page'.Yii::app()->theme->name, array('duration'=>self::CACHE_TIME, 'varyByParam'=>array('clas', 'subject', 'p'))) ){
 
 		$this->checkClas($clas);
 		$this->checkSubject($subject);
@@ -223,7 +222,7 @@ public function actionSubject($clas, $subject){
 public function actionBook( $clas, $subject, $book ){
 
 	// TODO - закешировать на сутка
-	if($this->beginCache('gdz_book_page', array('duration'=>self::CACHE_TIME, 'varyByParam'=>array('clas', 'subject', 'book'))) ){
+	if($this->beginCache('gdz_book_page'.Yii::app()->theme->name, array('duration'=>self::CACHE_TIME, 'varyByParam'=>array('clas', 'subject', 'book'))) ){
 		
 		// $path = Yii::app()->theme->basePath;
 	 //    $mainAssets = Yii::app()->AssetManager->publish($path);
@@ -275,7 +274,7 @@ public function actionTask($clas, $subject, $book, $task){
 	// sleep(5);
 
 	// TODO - закешировать на 30 days
-	if($this->beginCache('task_page', array('duration'=>self::CACHE_TIME, 'varyByParam'=>array('clas', 'subject', 'book','task'))) ){
+	if($this->beginCache('task_page'.Yii::app()->theme->name, array('duration'=>self::CACHE_TIME, 'varyByParam'=>array('clas', 'subject', 'book','task'))) ){
 
 		$this->checkClas($clas);
 		$this->checkSubject($subject);
@@ -336,7 +335,7 @@ public function actionTask($clas, $subject, $book, $task){
 public function actionNestedOne($clas, $subject, $book, $section, $task){
 
 	// TODO - закешировать на 30 days
-	if($this->beginCache('task_nested_one_page', array('duration'=>self::CACHE_TIME, 'varyByParam'=>array('clas','subject','book','section','task'))) ){
+	if($this->beginCache('task_nested_one_page'.Yii::app()->theme->name, array('duration'=>self::CACHE_TIME, 'varyByParam'=>array('clas','subject','book','section','task'))) ){
 
 		$this->checkClas($clas);
 		$this->checkSubject($subject);
@@ -405,7 +404,7 @@ public function actionNestedOne($clas, $subject, $book, $section, $task){
 public function actionNestedTwo($clas, $subject, $book, $section, $paragraph ,$task){
 
 	// TODO - закешировать на 30 days
-	if($this->beginCache('task_nested_one_page', array('duration'=>self::CACHE_TIME, 'varyByParam'=>array('clas','subject','book','section', 'paragraph','task'))) ){
+	if($this->beginCache('task_nested_one_page'.Yii::app()->theme->name, array('duration'=>self::CACHE_TIME, 'varyByParam'=>array('clas','subject','book','section', 'paragraph','task'))) ){
 
 		$this->checkClas($clas);
 		$this->checkSubject($subject);
