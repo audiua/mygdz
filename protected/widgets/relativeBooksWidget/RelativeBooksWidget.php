@@ -82,6 +82,7 @@ class RelativeBooksWidget extends CWidget{
     public function run(){
 
        // передаем данные в представление виджета
-       $this->render('index', array('model' => $this->model));
+        $view = Yii::app()->theme->name == 'm' ? 'index_m' : 'index' ;
+       $this->render($view, array('model' => $this->model));
    }
 }
