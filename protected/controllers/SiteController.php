@@ -18,8 +18,16 @@ public $description='ГДЗ - готові домашні завдання он�
 
 
 public function init(){
-	// d($this);
+
 	$this->param = $this->getActionParams();
+
+	Yii::import('ext.mobileDetect.Mobile_Detect');
+    $detect = new Mobile_Detect();
+    if( $detect->isMobile() || $detect->isTablet() ){
+		Yii::app()->theme = 'm';
+    }
+
+    return parent::init();
 }
 
 /**
@@ -217,9 +225,9 @@ public function actionBook( $clas, $subject, $book ){
 	// TODO - закешировать на сутка
 	if($this->beginCache('gdz_book_page', array('duration'=>self::CACHE_TIME, 'varyByParam'=>array('clas', 'subject', 'book'))) ){
 		
-		$path = Yii::app()->theme->basePath;
-	    $mainAssets = Yii::app()->AssetManager->publish($path);
-		Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/panzoom.js', CClientScript::POS_END);
+		// $path = Yii::app()->theme->basePath;
+	 //    $mainAssets = Yii::app()->AssetManager->publish($path);
+		// Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/panzoom.js', CClientScript::POS_END);
 
 		$this->checkClas($clas);
 		$this->checkSubject($subject);
