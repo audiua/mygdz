@@ -156,7 +156,7 @@ return array(
             'class'=>'ext.ExtendedClientScript.ExtendedClientScript',
             'combineCss'=>true,
             'compressCss'=>true,
-            'combineJs'=>true,
+            'combineJs'=>false,
             'compressJs'=>false,
 			'scriptMap'=>array(
 				// 'jquery'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
