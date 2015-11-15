@@ -148,8 +148,8 @@ return array(
 		),
 
 		'cache'=>array(
-            // 'class'=>'system.caching.CDummyCache',
-            'class'=>'system.caching.CFileCache',
+            'class'=>'system.caching.CDummyCache',
+            // 'class'=>'system.caching.CFileCache',
         ),
 
         'clientScript'=>array(
@@ -157,7 +157,7 @@ return array(
             'combineCss'=>true,
             'compressCss'=>true,
             'combineJs'=>true,
-            'compressJs'=>true,
+            'compressJs'=>false,
 			'scriptMap'=>array(
 				// 'jquery'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
         		'jquery.js'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
