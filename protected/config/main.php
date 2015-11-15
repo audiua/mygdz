@@ -154,8 +154,8 @@ return array(
 
         'clientScript'=>array(
             'class'=>'ext.ExtendedClientScript.ExtendedClientScript',
-            'combineCss'=>true,
-            'compressCss'=>true,
+            'combineCss'=>false,
+            'compressCss'=>false,
             'combineJs'=>false,
             'compressJs'=>false,
 			'scriptMap'=>array(
