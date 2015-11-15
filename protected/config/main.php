@@ -152,28 +152,28 @@ return array(
             'class'=>'system.caching.CFileCache',
         ),
 
-   //      'clientScript'=>array(
-   //          'class'=>'ext.ExtendedClientScript.ExtendedClientScript',
-   //          'combineCss'=>false,
-   //          'compressCss'=>false,
-   //          'combineJs'=>false,
-   //          'compressJs'=>false,
-			// 'scriptMap'=>array(
-			// 	'jquery'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
-			// 	'jquery.js'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
-			// 	// 'jquery.cookie.js'=>'/js/jquery1.11.1.min.js',
-			// 	'jquery.min.js'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
-			// )
-   //      ),
-
-        'clienScript'=>array(
-        	'scriptMap'=>array(
-        		// 'jquery'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
+        'clientScript'=>array(
+            'class'=>'ext.ExtendedClientScript.ExtendedClientScript',
+            'combineCss'=>true,
+            'compressCss'=>true,
+            'combineJs'=>true,
+            'compressJs'=>true,
+			'scriptMap'=>array(
+				// 'jquery'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
         		'jquery.js'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
         		// 'jquery.cookie.js'=>'/js/jquery1.11.1.min.js',
         		'jquery.min.js'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
-        	)
-		),
+			)
+        ),
+
+  //       'clienScript'=>array(
+  //       	'scriptMap'=>array(
+  //       		// 'jquery'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
+  //       		'jquery.js'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
+  //       		// 'jquery.cookie.js'=>'/js/jquery1.11.1.min.js',
+  //       		'jquery.min.js'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
+  //       	)
+		// ),
 
         'file' => array(
             'class'=>'application.extensions.file.CFile',
