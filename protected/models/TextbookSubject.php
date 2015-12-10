@@ -120,4 +120,19 @@ class TextbookSubject extends CActiveRecord
 	   }
 	   return $this->_url;
 	}
+
+	public function getBook($clas)
+	{
+		$clasModel = TextbookClas::model()->findByAttributes(array('slug'=>$clas));
+		if(!$clasModel){
+			return array();
+		}
+
+		$criteria = new CDbCriteria;
+		$criteria->condition = 't.class_id='.$clasModel->id;
+		$criteria->addCondition('t.subject_id='.$this->id);
+		$criteria->addCondition('t.publish_date<'.time());
+		$criteria->addCondition('t.public=1');
+		return Textbook::model()->findAll($criteria);
+	}
 }
