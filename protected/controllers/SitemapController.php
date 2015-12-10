@@ -25,6 +25,9 @@ class SitemapController extends Controller{
             $sitemap->addModels( Clas::model()->findAll(), Sitemap::WEEKLY, 0.2);
             $sitemap->addModelsWithClas( Clas::model()->with('subject')->findAll(), Sitemap::DAILY, 0.5);
             $sitemap->addModels( Book::model()->published()->findAll(), Sitemap::DAILY, 0.8);
+            $sitemap->addModels( TextbookClas::model()->findAll(), Sitemap::WEEKLY, 0.2);
+            $sitemap->addModelsWithOutRelation( TextbookClas::model()->findAll(), Sitemap::DAILY, 0.5);
+            $sitemap->addModels( Textbook::model()->published()->findAll(), Sitemap::DAILY, 0.8);
             $xml = $sitemap->render();
             // Yii::app()->cache->set('sitemap', $xml, 3600*24);
 

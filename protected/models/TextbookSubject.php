@@ -15,6 +15,7 @@
  */
 class TextbookSubject extends CActiveRecord
 {
+	private $_url;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -109,5 +110,14 @@ class TextbookSubject extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public function getUrl($clas)
+	{
+	   if ($this->_url === null){
+        	$this->_url = Yii::app()->createUrl('/textbook/'.$this->slug);
+	   		
+	   }
+	   return $this->_url;
 	}
 }

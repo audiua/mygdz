@@ -1,9 +1,5 @@
 <div class="subject-list">
-	<?php 
-		$class = 5;
-	$field= $this->controller->id.'_book';
-	$showSubject = false;
-	foreach( $this->model as $i => $one ): 
+	<?php foreach( $this->model as $i => $one ): 
 	    if( $one->$field ){
     		foreach( $one->$field as $book ){
     			if($book->public){

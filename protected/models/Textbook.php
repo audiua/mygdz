@@ -26,6 +26,7 @@ class Textbook extends CActiveRecord
 	public $info;
 	public $description;
 	public $pagination;
+	private $_url;
 
 	/**
 	 * @return string the associated database table name
@@ -34,6 +35,16 @@ class Textbook extends CActiveRecord
 	{
 		return 'textbook';
 	}
+
+	// именованое условие
+	public function scopes(){
+		$time=time();
+        return array(
+            'published'=>array(
+                'condition'=>'t.publish_date < '.$time.' AND t.public=1',
+            ),
+        );
+    }
 
 	/**
 	 * @return array validation rules for model attributes.
@@ -191,5 +202,13 @@ class Textbook extends CActiveRecord
 	public function getPdfLink()
 	{
 		return '/images/textbook/' . $this->clas->slug . '/'. $this->subject->slug . '/'. $this->id .'/textbook.pdf';
+	}
+
+	public function getUrl(){
+	   if ($this->_url === null){
+        	$this->_url = Yii::app()->createUrl('/textbook/'.$this->clas->slug.'/'.$this->subject->slug.'/'.$this->slug);
+	   		
+	   }
+	   return $this->_url;
 	}
 }
