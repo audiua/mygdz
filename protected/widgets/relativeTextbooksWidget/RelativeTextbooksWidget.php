@@ -27,6 +27,7 @@ class RelativeTextbooksWidget extends CWidget{
                 $criteria = new CDbCriteria;
                 $criteria->condition='class_id=:classId';
                 $criteria->addCondition('t.id<>'.$this->controller->bookModel->id);
+                $criteria->addCondition('t.public=1');
                 $criteria->addCondition('t.publish_date<'.time());
                 $criteria->params = array(':classId'=>$this->controller->clasModel->id);
                 $books = Textbook::model()->findAll($criteria);
@@ -57,6 +58,7 @@ class RelativeTextbooksWidget extends CWidget{
                 // получаем книги текущего 
                 $criteria = new CDbCriteria;
                 $criteria->condition='class_id<>:classId';
+                $criteria->addCondition('t.public=1');
                 $criteria->addCondition('t.publish_date<'.time());
                 $criteria->params = array(':classId'=>$this->controller->clasModel->id);
                 $books = Textbook::model()->findAll($criteria);
