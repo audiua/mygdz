@@ -11,12 +11,12 @@
 </script>
 	</div>
 
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-md-12 col-lg-12 tree">
 			<div class="lead">Навігація по сайту</div>
-			<?php $this->widget('TreeMenuWidget'); ?>
+			<?php // $this->widget('TreeMenuWidget'); ?>
 		</div>
-	</div>
+	</div> -->
 
 	<div class="separator"></div>
 

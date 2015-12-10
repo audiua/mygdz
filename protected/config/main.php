@@ -32,22 +32,24 @@ return array(
 		'application.helpers.*',
 		'application.widgets.dataBookWidget.*',
 		'application.widgets.oneBookWidget.*',
+		'application.widgets.oneTextbookWidget.*',
 		'application.widgets.taskWidget.*',
 		'application.widgets.nestedWidget.*',
 		'application.widgets.linkPagerWidget.*',
 		'application.widgets.relativeGdzWidget.*',
 		'application.widgets.relativeBooksWidget.*',
+		'application.widgets.relativeTextbooksWidget.*',
 		'application.widgets.treeMenuWidget.*',
 	),
 
 	'modules'=>array(
 
-		// 'gii'=>array(
-		// 	'class'=>'system.gii.GiiModule',
-		// 	'password'=>'123',
-		// 	// If removed, Gii defaults to localhost only. Edit carefully to taste.
-		// 	'ipFilters'=>array('127.0.0.1','::1'),
-		// ),
+		'gii'=>array(
+			'class'=>'system.gii.GiiModule',
+			'password'=>'123',
+			// If removed, Gii defaults to localhost only. Edit carefully to taste.
+			'ipFilters'=>array('127.0.0.1','::1'),
+		),
 		'inside',
 		'ajax'
 		
@@ -95,6 +97,15 @@ return array(
 
 				'/ajax/<controller:\w+>/<action:\w+>'=>'ajax/<controller>/<action>',
 
+				'/textbook/<clas:[a-z0-9-]+>'=>'textbook/clas',
+				'/textbook/<clas:[a-z0-9-]+>/p/<p:\d>'=>'textbook/clas',
+				'/textbook/<clas:[a-z0-9-]+>/<subject:[a-z-]+>/p/<p:\d>'=>'textbook/subject',
+				'/textbook/<clas:[a-z0-9-]+>/<subject:[a-z-]+>/<book:[a-z0-9-]+>/<section:\d+>/<paragraph:\d+>/<task:\d+>'=>'textbook/nestedTwo',
+				'/textbook/<clas:[a-z0-9-]+>/<subject:[a-z-]+>/<book:[a-z0-9-]+>/<section:\d+>/<task:\d+>'=>'textbook/nestedOne',
+				'/textbook/<clas:[a-z0-9-]+>/<subject:[a-z-]+>/<book:[a-z0-9-]+>/<task:\d+>'=>'textbook/task',
+				'/textbook/<clas:[a-z0-9-]+>/<subject:[a-z-]+>/<book:[a-z0-9-]+>'=>'textbook/book',
+				'/textbook/<clas:[a-z0-9-]+>/<subject:[a-z-]+>'=>'textbook/subject',
+
 				'/jewel' => 'site/jewel',
 				'/site/login' => 'site/login',
 				'/site/logout' => 'site/logout',
@@ -102,14 +113,12 @@ return array(
 
 				'<clas:\d+>/p/<p:\d>'=>'site/clas',
 				'<clas:\d+>/<subject:[a-z-]+>/p/<p:\d>'=>'site/subject',
-
 				'<clas:\d+>/<subject:[a-z_]+>/<book:[a-z0-9-_]+>/<section:\d+>/<paragraph:\d+>/<task:\d+>'=>'site/nestedTwo',
 				'<clas:\d+>/<subject:[a-z_]+>/<book:[a-z0-9-_]+>/<section:\d+>/<task:\d+>'=>'site/nestedOne',
 				'<clas:\d+>/<subject:[a-z_]+>/<book:[a-z0-9-_]+>/<task:\d+>'=>'site/task',
 				'<clas:\d+>/<subject:[a-z_]+>/<book:[a-z0-9-_]+>'=>'site/book',
-				
-
 				'<clas:\d+>/<subject:[a-z_]+>'=>'site/subject',
+
 				
 
 				'<clas:\d+>'=>'site/clas',
@@ -148,8 +157,8 @@ return array(
 		),
 
 		'cache'=>array(
-            // 'class'=>'system.caching.CDummyCache',
-            'class'=>'system.caching.CFileCache',
+            'class'=>'system.caching.CDummyCache',
+            // 'class'=>'system.caching.CFileCache',
         ),
 
         'clientScript'=>array(
