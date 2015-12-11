@@ -240,7 +240,14 @@ public function actionBook( $clas, $subject, $book ){
 		// $this->canonical = Yii::app()->createAbsoluteUrl('/gdz/'.$clas.'/'.$subject.'/'.$book);
 		// $this->setMeta();
 
-		$this->render('book');
+		$confiId = null;
+		if(!empty($this->bookModel->issue_embed)){
+
+			$embedCobfig = json_decode($this->bookModel->issue_embed);
+			$confiId = $embedCobfig->rsp->_content->documentEmbed->dataConfigId;
+		}
+
+		$this->render('book', array('embedConfigId'=>$confiId));
 
 		$this->endCache(); 
 	
@@ -380,4 +387,146 @@ public function checkerBook($clas, $subject, $book){
 
 }
 
+
+	public $apiKey = '9rbdd1doh6to113cwl7uoaolchhty5hi';
+	public $apiSecret = 'g95gm96itv5ffi1qc5djugcipf274dgt';
+    public $url = 'http://upload.issuu.com/1_0';
+    public function actionIssue(){
+
+    	// $val = json_decode('{"rsp":{"_content":{"document":{"username":"rompetrom","name":"1","documentId":"151210212009-19f8eba732c446e2aa78f04c446566be","uploadTimestamp":"2015-12-10T21:20:09.000Z","created":"2015-12-10T21:20:09.000Z","revisionId":"151210212009","publicationId":"19f8eba732c446e2aa78f04c446566be","title":"textbook.pdf","access":"public","state":"P","errorCode":0,"preview":false,"category":"000000","type":"000000","orgDocType":"pdf","orgDocName":"textbook.pdf","downloadable":false,"origin":"apiupload","rating":0,"ratingsAllowed":true,"ratingDist":"0|0|0|0|0","likes":0,"commentsAllowed":false,"showDetectedLinks":false,"pageCount":0,"dcla":"3|||||||0|0","ep":1449705600,"publishDate":"2015-12-10T00:00:00.000Z","coverWidth":0,"coverHeight":0}},"stat":"ok"}}');
+    	// d($val);
+
+//     	echo '<form action="http://upload.issuu.com/1_0" enctype="multipart/form-data" method="post"> 
+//   <input type="hidden" name="action" value="issuu.document.upload"/> 
+//   <input type="hidden" name="apiKey" value="9rbdd1doh6to113cwl7uoaolchhty5hi"/> 
+//   <input type="hidden" name="name" value="textbook"/> 
+//   <input type="hidden" name="title" value="english"/> 
+//   <input type="hidden" name="signature" value="810b910ed5c8a53d704fd062a6001b22"/> 
+//   <input type="file" name="file"/> 
+//   <input type="text" name="signature" value="'.md5($this->apiSecret.'actionissuu.document.uploadapiKey'.$this->apiKey.'nametextbooktitleenglish').'"/> 
+//   <input type="submit" value="Upload"/> 
+// </form>';
+    	file_put_contents('filename', 1);
+
+    	$textbooks = Textbook::model()->findAll();
+    	foreach($textbooks as $textbook){
+    		if($textbook->issue_id){
+    			continue;
+    		}
+    		$pdf = $textbook->getImgDir(false).'textbook.pdf';
+    		if(!file_exists($pdf)){
+    			echo 'no file '.$pdf ."\n";
+    			continue;
+    		}
+
+	        $data = array(
+	        	'apiKey' => $this->apiKey,
+	        	'action'=>'issuu.document.upload',
+	        	'name'=>$textbook->id,
+	        	'format'=>'json',
+	        	'title'=>$textbook->clas->slug . '-'. $textbook->subject->slug.'-'.$textbook->slug,
+        	);
+
+        	ksort($data);
+        	$signature = $this->apiSecret;
+        	foreach($data as $key => $value){
+        		$signature .=$key.$value;
+        	}
+        	$cFile = curl_file_create(realpath($pdf), 'application/pdf', 'textbook.pdf');
+
+        	$data['signature'] = md5($signature);
+        	// $data['file'] = '@'.realpath($pdf).';filename="textbook.pdf;mime=application/pdf"';
+        	$data['file'] = $cFile;
+
+        	// d($data);
+
+        	$headers = array("Content-Type:multipart/form-data"); 
+	        $curl = curl_init();
+	        curl_setopt($curl, CURLOPT_URL, $this->url);
+	        curl_setopt($curl, CURLOPT_USERAGENT,'Opera/9.80 (Windows NT 6.2; Win64; x64) Presto/2.12.388 Version/12.15');
+	        curl_setopt($curl, CURLOPT_HTTPHEADER,$headers);
+	        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false); // stop verifying certificate
+	        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	        curl_setopt($curl, CURLOPT_POST, true); // enable posting
+	        curl_setopt($curl, CURLOPT_POSTFIELDS,  $data); // post images
+	        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true); // if any redirection after upload
+	        $r = curl_exec($curl);
+
+	        print_r($r);
+	        curl_close($curl);
+	        
+	        $response = json_decode($r);
+	        if( isset($response->rsp->_content->document->documentId) ){
+	        	$textbook->issue_id = $response->rsp->_content->document->documentId;
+	        	$textbook->save();
+	        } else {
+	        	print_r($response);
+	        }
+
+	        break;
+    		
+    	}
+
+        
+    }
+
+    public function actionEmbed()
+    {
+    	ini_set('max_execution_time', 0);
+    	$textbooks = Textbook::model()->findAll();
+    	foreach($textbooks as $textbook){
+
+    		if(empty($textbook->issue_id) || !empty($textbook->issue_embed)){
+    			continue;
+    		}
+
+			$data = array(
+	        	'apiKey' => $this->apiKey,
+	        	'action'=>'issuu.document_embed.add',
+	        	'documentId'=>$textbook->issue_id,
+	        	'format'=>'json',
+	        	'readerStartPage'=>'1',
+	        	'width'=>'700',
+	        	'height'=>'500',
+        	);
+
+        	ksort($data);
+        	$signature = $this->apiSecret;
+        	foreach($data as $key => $value){
+        		$signature .=$key.$value;
+        	}
+        	$data['signature'] = md5($signature);
+
+        	// echo http_build_query($data);
+
+	        $curl = curl_init();
+	        curl_setopt($curl, CURLOPT_URL, 'http://api.issuu.com/1_0');
+	        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false); // stop verifying certificate
+	        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	        curl_setopt($curl, CURLOPT_POST, true); // enable posting
+	        curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data)); // post images
+	        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true); // if any redirection after upload
+	        $r = curl_exec($curl);
+
+	        print_r(curl_error($curl));
+	        curl_close($curl);
+
+	        $response = json_decode($r);
+	        if(isset($response->rsp->_content->documentEmbed)){
+	        	$textbook->issue_embed = $r;
+	        	$textbook->save();
+	        } else {
+	        	echo $r;
+	        }
+
+	        sleep(5);
+
+	        // break;
+
+    	}
+    }
+
+
+
 }
+

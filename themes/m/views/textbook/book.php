@@ -2,6 +2,10 @@
 
 <?php $this->widget('OneTextbookWidget'); ?>
 
+<?php if($embedConfigId): ?>
+<iframe width="320" height="250" src="//e.issuu.com/embed.html#<?= $embedConfigId; ?>" frameborder="0" allowfullscreen></iframe>
+<?php endif; ?>
+
 <div class="separator"></div>
 <div class="clearfix"></div>
 

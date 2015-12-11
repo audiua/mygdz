@@ -97,6 +97,8 @@ return array(
 
 				'/ajax/<controller:\w+>/<action:\w+>'=>'ajax/<controller>/<action>',
 
+				'/textbook/issue'=>'textbook/issue',
+				'/textbook/embed'=>'textbook/embed',
 				'/textbook/<clas:[a-z0-9-]+>'=>'textbook/clas',
 				'/textbook/<clas:[a-z0-9-]+>/p/<p:\d>'=>'textbook/clas',
 				'/textbook/<clas:[a-z0-9-]+>/<subject:[a-z-]+>/p/<p:\d>'=>'textbook/subject',
