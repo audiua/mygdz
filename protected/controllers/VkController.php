@@ -32,7 +32,7 @@ class VkController extends Controller{
 			// 	$str .= $this->normalDate(time()).' обновлено гдз ';
 			// } else {
 			// }	
-			$str .= $this->normalDate(strtotime($model->publish_date)).' добавлено підручник ';
+			$str .= $this->normalDate($model->publish_date).' добавлено підручник ';
 
 			$str .= $model->clas->name . ' клас ' . $model->subject->name . ' ' . $model->author  . ' ' . $model->year  . 'рік ' . Yii::app()->createAbsoluteUrl( $model->getUrl() );
 
