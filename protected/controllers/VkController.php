@@ -66,7 +66,7 @@ class VkController extends Controller{
 			// if( ! $gdz->update()){
 			// 	die($gdz->gerErrors);
 			// }
-			$gdz->update()
+			$gdz->update();
 		
 		}
 		return $gdz;
