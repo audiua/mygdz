@@ -60,15 +60,16 @@ class VkController extends Controller{
 		$gdz = Textbook::model()->find($criteria);
 		// d($gdz);
 
-		return $gdz;
-		// if($gdz){
-		// 	$this->_p = true;
-		// 	$gdz->update_time = time();
-		// 	if( ! $gdz->update()){
-		// 		die($gdz->gerErrors);
-		// 	}
+		if($gdz){
+			// $this->_p = true;
+			$gdz->vk_publish_time = time();
+			// if( ! $gdz->update()){
+			// 	die($gdz->gerErrors);
+			// }
+			$gdz->update()
 		
-		// }
+		}
+		return $gdz;
 
 		// return null;
 
