@@ -13,7 +13,7 @@
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 		    <ul class="nav navbar-nav">
 		        <li class="menu-item dropdown <?= ($this->id == 'site') ? ' active' : '' ; ?>">
-		            <a href="#" class="dropdown-toggle " data-toggle="dropdown">ГДЗ<b class="caret"></b></a>
+		            <a href="/" class="dropdown-toggle " data-toggle="dropdown">ГДЗ<b class="caret"></b></a>
 		            <ul class="dropdown-menu">
 		            <?php foreach( Clas::model()->findAll() as $clas ) : ?>
 		                <li class="menu-item dropdown dropdown-submenu">
@@ -30,7 +30,7 @@
 		            </ul>
 		        </li>
 		        <li class="menu-item dropdown <?= ($this->id == 'textbook') ? ' active' : '' ; ?>">
-		            <a href="#" class="dropdown-toggle " data-toggle="dropdown">Підручники<b class="caret"></b></a>
+		            <a href="/textbook" class="dropdown-toggle " data-toggle="dropdown">Підручники<b class="caret"></b></a>
 		            <ul class="dropdown-menu">
 		            <?php foreach( TextbookClas::model()->findAll() as $clas ) : ?>
 		                <li class="menu-item dropdown dropdown-submenu">
