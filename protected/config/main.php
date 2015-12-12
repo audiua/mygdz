@@ -99,6 +99,7 @@ return array(
 
 				'/textbook/issue'=>'textbook/issue',
 				'/textbook/embed'=>'textbook/embed',
+				'/textbook/p/<p:\d>'=>'textbook/index',
 				'/textbook/<clas:[a-z0-9-]+>'=>'textbook/clas',
 				'/textbook/<clas:[a-z0-9-]+>/p/<p:\d>'=>'textbook/clas',
 				'/textbook/<clas:[a-z0-9-]+>/<subject:[a-z-]+>/p/<p:\d>'=>'textbook/subject',
