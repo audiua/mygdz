@@ -10,11 +10,11 @@
 <?php endif; ?>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- my_mobi_middle -->
+<!-- my_netboard_middle -->
 <ins class="adsbygoogle"
-     style="display:inline-block;width:336px;height:280px"
+     style="display:inline-block;width:580px;height:400px"
      data-ad-client="ca-pub-9657826060070920"
-     data-ad-slot="9749047893"></ins>
+     data-ad-slot="2539516294"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
