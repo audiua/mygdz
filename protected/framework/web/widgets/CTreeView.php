@@ -140,8 +140,7 @@ class CTreeView extends CWidget
 		if($this->url!==null)
 			$this->url=CHtml::normalizeUrl($this->url);
 		$cs=Yii::app()->getClientScript();
-		$cs->registerCoreScript('treeview', CClientScript::POS_END);
-		$cs->coreScriptPosition=CClientScript::POS_END;
+		$cs->registerCoreScript('treeview');
 		$options=$this->getClientOptions();
 		$options=$options===array()?'{}' : CJavaScript::encode($options);
 		$cs->registerScript('Yii.CTreeView#'.$id,"jQuery(\"#{$id}\").treeview($options);");
