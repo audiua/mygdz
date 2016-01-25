@@ -97,6 +97,7 @@ return array(
 
 				'/ajax/<controller:\w+>/<action:\w+>'=>'ajax/<controller>/<action>',
 
+				'/textbook/sync'=>'textbook/sync',
 				'/textbook/issue'=>'textbook/issue',
 				'/textbook/embed'=>'textbook/embed',
 				'/textbook/p/<p:\d+>'=>'textbook/index',
@@ -197,5 +198,6 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'audiua@yandex.ru',
+		'auth'=> require(dirname(__FILE__).'/_auth.php'),
 	),
 );

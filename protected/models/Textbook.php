@@ -60,7 +60,7 @@ class Textbook extends CActiveRecord
 			array('year, edition, isbn, format, slug', 'length', 'max'=>255),
 			array('lang', 'length', 'max'=>2),
 			array('public', 'length', 'max'=>1),
-			array('properties, issue_id, issue_embed', 'safe'),
+			array('properties, issue_id, issue_embed, vk_img, vk_publish_time', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, class_id, subject_id, author, year, properties, lang, edition, isbn, format, slug, create_time, update_time, public, publish_date', 'safe', 'on'=>'search'),

@@ -59,8 +59,9 @@ public function filters() {
  * when an action is not explicitly requested by users.
  */
 public function actionIndex(){
+	// d($this->createUrl());
 
-	// TODO - закешировать на 4 hour
+// TODO - закешировать на 4 hour
 	if($this->beginCache('main-textbook-page-'.Yii::app()->theme->name , array('duration'=>self::CACHE_TIME, 'varyByParam'=>array('p'))) ){
 
 		$this->breadcrumbs = array(
@@ -463,7 +464,7 @@ public function checkerBook($clas, $subject, $book){
 	        	print_r($response);
 	        }
 
-	        break;
+	        // break;
     		
     	}
 
@@ -527,6 +528,62 @@ public function checkerBook($clas, $subject, $book){
     }
 
 
+    public function actionSync()
+    {
+    	$url = Yii::app()->request->getParam('u', null);
+
+		$criteria = new CDbCriteria;
+		$criteria->condition = 't.issue_id IS NOT NULL';
+    	$textbooks = Textbook::model()->findAll($criteria);
+
+    	// d($textbooks);
+    	foreach($textbooks as $textbook){
+    		$this->curl('http://mygdz.pp.ua/textbook/syncPost', $textbook);
+    		// sleep();
+    		// break;
+    	}
+
+
+
+    }
+
+    public function actionSyncPost()
+    {
+    	$id = Yii::app()->request->getPost('id', null);
+    	$issue_id = Yii::app()->reqest->getPost('issue_id', null);
+    	$issue_embed = Yii::app()->reqest->getPost('issue_embed', null);
+
+    	$textbook = Textbook::model()->findByPk($id);
+    	$textbook->issue_id = $issue_id;
+    	$textbook->issue_embed = $issue_embed;
+    	$textbook->save();
+
+    	echo 1;
+    }
+
+    protected function curl($url, $model)
+    {
+
+    	$data = array(
+    		'id'=>$model->id,
+    		'issue_id'=>$model->issue_id,
+    		'issue_embed'=>$model->issue_embed
+		);
+
+		$dataStr = http_build_query($data);
+		// d($dataStr);
+
+    	$curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_USERAGENT,'Opera/9.80 (Windows NT 6.2; Win64; x64) Presto/2.12.388 Version/12.15');
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_POST, true); // enable posting
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $dataStr); // post images
+        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true); // if any redirection after upload
+        $r = curl_exec($curl);
+        curl_close($curl);
+
+        print_r($r);
+    }
 
 }
-
