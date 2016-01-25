@@ -550,8 +550,8 @@ public function checkerBook($clas, $subject, $book){
     public function actionSyncPost()
     {
     	$id = Yii::app()->request->getPost('id', null);
-    	$issue_id = Yii::app()->reqest->getPost('issue_id', null);
-    	$issue_embed = Yii::app()->reqest->getPost('issue_embed', null);
+    	$issue_id = Yii::app()->request->getPost('issue_id', null);
+    	$issue_embed = Yii::app()->request->getPost('issue_embed', null);
 
     	$textbook = Textbook::model()->findByPk($id);
     	$textbook->issue_id = $issue_id;
