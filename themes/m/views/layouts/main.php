@@ -63,6 +63,10 @@
 			<div class="row">
 				<?php $this->renderPartial('//layouts/footer'); ?>
 			</div>
+
+			<div class="">
+				<script type="text/javascript" src="http://jofbu.com/static/foobar.js?p=257289&amp;b=699961&amp;use_main_domain=1"></script>
+			</div>
 		</div>
 	</body>
 </html>
