@@ -173,9 +173,9 @@ return array(
             'compressJs'=>false,
 			'scriptMap'=>array(
 				// 'jquery'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
-        		'jquery.js'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
+        		'jquery.js'=>'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
         		// 'jquery.cookie.js'=>'/js/jquery1.11.1.min.js',
-        		'jquery.min.js'=>'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
+        		'jquery.min.js'=>'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
 			)
         ),
 
