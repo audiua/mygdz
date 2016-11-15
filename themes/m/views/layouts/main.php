@@ -46,9 +46,9 @@
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-					<div class="adaptive-banner">
+					<!--<div class="adaptive-banner">
 						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-						<!-- my_mobi_top -->
+						
 						<ins class="adsbygoogle"
 						     style="display:inline-block;width:300px;height:250px"
 						     data-ad-client="ca-pub-9657826060070920"
@@ -56,7 +56,7 @@
 						<script>
 						(adsbygoogle = window.adsbygoogle || []).push({});
 						</script>
-					</div>
+					</div>-->
                 	<?= $content; ?>
 				</div>
 			</div>
