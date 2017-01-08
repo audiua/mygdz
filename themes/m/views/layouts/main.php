@@ -16,6 +16,14 @@
     	<link rel="stylesheet" href="/css/social-likes_flat.css">
 
 		<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({
+				google_ad_client: "ca-pub-9657826060070920",
+				enable_page_level_ads: true
+			});
+		</script>
 		<?php 
 			$cs=Yii::app()->clientScript;
 			$cs->registerCoreScript('jquery'); 
