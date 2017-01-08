@@ -130,11 +130,12 @@ class LinkPager extends CLinkPager
 	{
 		echo '<div class="clearfix"></div>';
 		echo '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- my_netboard_middle -->
+<!-- my_adaptive_top -->
 <ins class="adsbygoogle"
-     style="display:inline-block;width:580px;height:400px"
+     style="display:block"
      data-ad-client="ca-pub-9657826060070920"
-     data-ad-slot="2539516294"></ins>
+     data-ad-slot="5318848293"
+     data-ad-format="auto"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>';
