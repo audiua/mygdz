@@ -6,7 +6,7 @@
 <div class="clearfix"></div>
 
 <!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
-<!--<!-- my_adaptive_top -->-->
+<!-- my_adaptive_top -->
 <!--<ins class="adsbygoogle"-->
 <!--	 style="display:block"-->
 <!--	 data-ad-client="ca-pub-9657826060070920"-->
