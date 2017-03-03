@@ -1,7 +1,7 @@
 <div class="sidebar">
 	<div class="banner">
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!--<!-- my небоскреб -->-->
+<!-- my небоскреб -->
 <!--<ins class="adsbygoogle"-->
 <!--     style="display:inline-block;width:300px;height:600px"-->
 <!--     data-ad-client="ca-pub-9657826060070920"-->
