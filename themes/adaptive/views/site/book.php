@@ -77,8 +77,6 @@
 <div class="clearfix"></div>
 <div class="separator"></div>
 
-<div class="lead">Схожі збірники гдз: </div>
-
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
      style="display:block"
