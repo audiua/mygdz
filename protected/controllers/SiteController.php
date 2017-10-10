@@ -283,11 +283,20 @@ public function actionTask($clas, $subject, $book, $task){
 		$this->clasModel = $this->loadClas($clas);
 		$this->subjectModel = $this->loadSubject($subject);
 		$this->bookModel = $this->loadBook($book);
+        if (stripos($task, '.jpg') > 0) {
+            $pathImg['path'] = $clas . '/'
+                . $subject . '/'
+                . $book . '/task/'
+                . $task;
+        } else {
+            $pathImg['path'] = $clas . '/'
+                . $subject . '/'
+                . $book . '/task/'
+                . $task .'.png';
+        }
 
-		$pathImg['path'] = $clas . '/' 
-		. $subject . '/' 
-		. $book . '/task/'
-		. $task .'.png';
+
+
 
 		if( ! file_exists( Yii::app()->basePath . '/../' . 'images/gdz/' . $pathImg['path'])){
 			$_GET = null;
