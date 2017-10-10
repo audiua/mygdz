@@ -43,7 +43,7 @@ $path = 'images/gdz/'.$this->params['clas'].'/'.$this->params['subject'].'/'.$th
 
 		<div class="social-likes">
 			<div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
-			<div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Вконтакте</div>
+<!--			<div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Вконтакте</div>-->
 			<!-- <div class="odnoklassniki" title="Поделиться ссылкой в Одноклассниках">Одноклассники</div> -->
 			<div class="plusone" title="Поделиться ссылкой в Гугл-плюсе">Google+</div>
 		</div>

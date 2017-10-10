@@ -25,7 +25,8 @@ $path = 'images/gdz/'.$data->clas->slug.'/'.$data->subject->slug.'/'.$data->slug
 		<div class="book-author"> <?php echo $data->author; ?></div>
 		<div class="book-subject"> <?php echo $data->title; ?></div>
 		<div class="book-clas"><?php echo $data->clas->slug; ?> клас</div>
-		<?php 
+		<div class="book-clas"><?php echo $data->year; ?> рік</div>
+		<?php
 			if( !empty($data->properties) ){
 				echo '<div class="desc">'.$data->properties.'</div>';
 			}
