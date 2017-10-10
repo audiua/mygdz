@@ -25,19 +25,7 @@
 			});
 		</script>
 
-		<?php
-			$cs=Yii::app()->clientScript;
-			$cs->registerCoreScript('jquery'); 
-		?>
-
-		<?php 
-            $path = Yii::app()->theme->basePath;
-            $mainAssets = Yii::app()->AssetManager->publish($path);
-            // Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/jquery.cookie.js', CClientScript::POS_END);
-            Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/bootstrap.min.js', CClientScript::POS_END);
-            Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/app.js', CClientScript::POS_END);
-            Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/social-likes.min.js', CClientScript::POS_END);
-         ?>
+		
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -76,5 +64,19 @@
 				<?php $this->renderPartial('//layouts/footer'); ?>
 			</div>
 		</div>
+		
+		<?php
+			$cs=Yii::app()->clientScript;
+			$cs->registerCoreScript('jquery'); 
+		?>
+
+		<?php 
+            $path = Yii::app()->theme->basePath;
+            $mainAssets = Yii::app()->AssetManager->publish($path);
+            // Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/jquery.cookie.js', CClientScript::POS_END);
+            Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/bootstrap.min.js', CClientScript::POS_END);
+            Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/app.js', CClientScript::POS_END);
+            Yii::app()->getClientScript()->registerScriptFile($mainAssets.'/js/social-likes.min.js', CClientScript::POS_END);
+         ?>
 	</body>
 </html>

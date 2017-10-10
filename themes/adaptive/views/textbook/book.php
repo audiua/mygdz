@@ -52,7 +52,16 @@
 <div class="clearfix"></div>
 <div class="separator"></div>
 
-<div class="lead">Схожі підручники: </div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-9657826060070920"
+     data-ad-slot="1342143091"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <div class="book-list">
 	<?php $this->widget('RelativeTextbooksWidget', array('mode'=>'clas')); ?>
 </div>
