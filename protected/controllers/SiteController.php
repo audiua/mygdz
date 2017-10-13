@@ -199,7 +199,7 @@ public function actionSubject($clas, $subject){
 		$books = new CActiveDataProvider('Book', 
 			array(
 				'criteria'=>$criteria, 
-				'pagination'=>array('pageSize'=>12,'pageVar'=>'p'),
+				'pagination'=>array('pageSize'=>16,'pageVar'=>'p'),
 			)
 		);
 
