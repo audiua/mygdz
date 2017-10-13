@@ -376,8 +376,11 @@ public function actionNestedOne($clas, $subject, $book, $section, $task){
 //        throw new CHttpException('404', $pathImg['path']);
 
 		if( ! file_exists( Yii::app()->basePath . '/../' . 'images/gdz/' . $pathImg['path'])){
-			$_GET = null;
-			throw new CHttpException('404', 'такого задания в этом учебнике нету');
+            $pathImg['path'] = str_replace('.png', '.jpg', $pathImg['path']);
+            if( ! file_exists(Yii::app()->basePath . '/../' . 'images/gdz/' . $pathImg['path'])) {
+                $_GET = null;
+                throw new CHttpException('404', 'такого задания в этом учебнике нету');
+            }
 		}
 
 		$imgSize = getimagesize(Yii::app()->basePath . '/../' . 'images/gdz/' . $pathImg['path']);
