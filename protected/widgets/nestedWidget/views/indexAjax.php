@@ -11,7 +11,10 @@
 
 	// сортировка в нужном порядке
 	require_once(Yii::app()->basePath . '/helpers/sort.php');
-	uksort($model,"mysort");
+//	uksort($model,"mysort");
+//print_r($model);
+//	array_reverse($model, true);
+//d($model);
 
 	// определяем выбраный раздел
 	if(isset($this->params['section'])){

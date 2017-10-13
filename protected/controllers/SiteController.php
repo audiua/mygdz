@@ -358,6 +358,8 @@ public function actionNestedOne($clas, $subject, $book, $section, $task){
 		. '/' . $subject 
 		. '/' . $book . '/task/';
 
+
+
 		$sections = scandir( Yii::app()->basePath . '/../' .'/images/gdz/' . $path);
 		$pathImg= array();
 		foreach($sections as $oneSection){
@@ -370,6 +372,8 @@ public function actionNestedOne($clas, $subject, $book, $section, $task){
 				$pathImg['path'] = $path . $oneSection . '/' . $task . '.png';
 			}
 		}
+
+//        throw new CHttpException('404', $pathImg['path']);
 
 		if( ! file_exists( Yii::app()->basePath . '/../' . 'images/gdz/' . $pathImg['path'])){
 			$_GET = null;
@@ -447,11 +451,14 @@ public function actionNestedTwo($clas, $subject, $book, $section, $paragraph ,$t
 			}
 		}
 		
-		// d(Yii::app()->basePath . '/../' . 'images/gdz/' . $pathImg['path']);
+//		 d(Yii::app()->basePath . '/../' . 'images/gdz/' . $pathImg['path']);
 
 		if( ! file_exists(Yii::app()->basePath . '/../' . 'images/gdz/' . $pathImg['path'])){
-			$_GET = null;
-			throw new CHttpException('404', 'такого задания в этом учебнике нету');
+            $pathImg['path'] = str_replace('.png', '.jpg', $pathImg['path']);
+            if( ! file_exists(Yii::app()->basePath . '/../' . 'images/gdz/' . $pathImg['path'])) {
+                $_GET = null;
+                throw new CHttpException('404', 'такого задания в этом учебнике нету');
+            }
 		}
 
 		$imgSize = getimagesize(Yii::app()->basePath . '/../' . 'images/gdz/' . $pathImg['path']);

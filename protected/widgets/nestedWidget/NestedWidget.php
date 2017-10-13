@@ -21,6 +21,7 @@ class NestedWidget extends CWidget{
     public function run(){
 
        // передаем данные в представление виджета
+//        print_r($this->model);
        $this->render($this->view,array('model' => $this->model));
    }
 }

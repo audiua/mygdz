@@ -61,6 +61,7 @@ foreach( $model as $i => $one ){
 
 // если есть папки то вызываем виджет для отрисовки вложености
 if(!empty($tmp)){
+//	print_r($tmp);
 	$this->controller->widget('NestedWidget', array('model'=>$tmp));
 }
 

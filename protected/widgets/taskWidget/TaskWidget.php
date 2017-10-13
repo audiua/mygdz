@@ -20,6 +20,7 @@ class TaskWidget extends CWidget{
         }
 
 		$this->model = $this->rec($path);
+//        print_r($this->model);
         if( empty($this->model) || !is_array($this->model) ){
             $_GET = null;
             throw new CHttpException('404', 'нет такой книги');
@@ -28,6 +29,9 @@ class TaskWidget extends CWidget{
     }
 
 	public function run(){
+
+//        sort($this->model);
+//        print_r($this->model);
         $this->render( 'indexAjax', array('model' => $this->model) );
     }
 
@@ -43,13 +47,13 @@ class TaskWidget extends CWidget{
         $all = array_diff($all, array('.','..'));
         natsort($all);
 
-        foreach($all as $one){
-            if(is_dir($dir.DIRECTORY_SEPARATOR.$one)){
-                $path[$one] = $this->rec($dir.DIRECTORY_SEPARATOR.$one);
-            } elseif(is_file($dir.DIRECTORY_SEPARATOR.$one)) {
+        foreach($all as $one) {
+            if (is_dir($dir . DIRECTORY_SEPARATOR . $one)) {
+                $path[$one] = $this->rec($dir . DIRECTORY_SEPARATOR . $one);
+            } elseif (is_file($dir . DIRECTORY_SEPARATOR . $one)) {
                 $path[] = $one;
-            }   
-            
+            }
+
         }
 
         return $path;
