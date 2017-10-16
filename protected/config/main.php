@@ -116,12 +116,12 @@ return array(
 				'/site/page' => 'site/page',
 
 				'<clas:\d+>/p/<p:\d+>'=>'site/clas',
-				'<clas:\d+>/<subject:[a-z-]+>/p/<p:\d+>'=>'site/subject',
-				'<clas:\d+>/<subject:[a-z_]+>/<book:[a-z0-9-_]+>/<section:\d+>/<paragraph:\d+>/<task:\d+>'=>'site/nestedTwo',
-				'<clas:\d+>/<subject:[a-z_]+>/<book:[a-z0-9-_]+>/<section:\d+>/<task:\d+>'=>'site/nestedOne',
-				'<clas:\d+>/<subject:[a-z_]+>/<book:[a-z0-9-_]+>/<task:\d+>'=>'site/task',
-				'<clas:\d+>/<subject:[a-z_]+>/<book:[a-z0-9-_]+>'=>'site/book',
-				'<clas:\d+>/<subject:[a-z_]+>'=>'site/subject',
+				'<clas:\d+>/<subject:[a-z_-]+>/p/<p:\d+>'=>'site/subject',
+				'<clas:\d+>/<subject:[a-z_-]+>/<book:[a-z0-9-_]+>/<section:\d+>/<paragraph:\d+>/<task:\d+>'=>'site/nestedTwo',
+				'<clas:\d+>/<subject:[a-z_-]+>/<book:[a-z0-9-_]+>/<section:\d+>/<task:\d+>'=>'site/nestedOne',
+				'<clas:\d+>/<subject:[a-z_-]+>/<book:[a-z0-9-_]+>/<task:\d+>'=>'site/task',
+				'<clas:\d+>/<subject:[a-z_-]+>/<book:[a-z0-9-_]+>'=>'site/book',
+				'<clas:\d+>/<subject:[a-z_-]+>'=>'site/subject',
 
 				
 
