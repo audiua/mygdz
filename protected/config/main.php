@@ -126,7 +126,7 @@ return array(
 				
 
 				'<clas:\d+>'=>'site/clas',
-				'p/<p:\d>'=>'site/index',
+				'p/<p:\d+>'=>'site/index',
 
 				'sitemap.xml'=>'sitemap/index',
 				'sitemap'=>'site/sitemap',
