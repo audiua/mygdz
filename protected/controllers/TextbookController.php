@@ -76,6 +76,8 @@ public function actionIndex(){
 		}
 
 		$this->pageTitle = 'Підручники'.$page;
+        $this->description = $this->description . $page;
+        $this->keywords = $this->keywords . $page;
 		$this->canonical = Yii::app()->createAbsoluteUrl('/');
 
 		$criteria = new CDbCriteria;
@@ -121,8 +123,8 @@ public function actionClas($clas){
 			$page = '';
 		}
 
-		$this->keywords = 'підручники для'.$this->clasModel->name . ' класу, підручники онлайн, скачати підручники ';
-		$this->description = 'підручники '.$this->clasModel->name . ' клас ';
+		$this->keywords = 'підручники для'.$this->clasModel->name . ' класу, підручники онлайн, скачати підручники ' . $page;
+		$this->description = 'підручники '.$this->clasModel->name . ' клас ' . $page;
 		// $this->h1 = 'ГДЗ '.(int)$clas.' клас';
 		// $this->pageTitle = 'SHKOLYAR.INFO - '.$this->h1;
 		// $this->canonical = Yii::app()->createAbsoluteUrl('/'.$clas);
@@ -169,8 +171,8 @@ public function actionSubject($clas, $subject){
 			$page = '';
 		}
 
-		$this->keywords = 'підручники для '.$this->clasModel->name . ' класу '. $this->subjectModel->name.', підручники онлайн, скачати підручники ';
-		$this->description = 'підручники '.$this->clasModel->name . ' клас '. $this->subjectModel->name;
+		$this->keywords = 'підручники для '.$this->clasModel->name . ' класу '. $this->subjectModel->name.', підручники онлайн, скачати підручники ' . $page;
+		$this->description = 'підручники '.$this->clasModel->name . ' клас '. $this->subjectModel->name . $page;
 
 		// $this->h1 = 'ГДЗ '.(int)$clas.' клас '. $this->subjectModel->subject->title;
 		// $this->pageTitle = 'SHKOLYAR.INFO - '.$this->h1;

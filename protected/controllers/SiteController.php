@@ -74,6 +74,8 @@ public function actionIndex(){
 		}
 
 		$this->pageTitle = 'Готові домашні завдання'.$page;
+		$this->description = $this->description.$page;
+		$this->keywords = $this->keywords.$page;
 		$this->canonical = Yii::app()->createAbsoluteUrl('/');
 
 		$criteria = new CDbCriteria;
@@ -118,19 +120,12 @@ public function actionClas($clas){
 			$page = '';
 		}
 
-		$this->keywords = 
-			'ГДЗ - готові домашні завдання '.$clas.' клас, 
-			гдз '.$clas. ' клас, 
-			гдз онлайн '.$clas. ' клас, 
-			гдз '.$clas. ' клас Україна, 
-			гдз решебники '.$clas.' клас, 
-			готові домашні завдання '.$this->clasModel->title.' клас, 
-			гдз '.$this->clasModel->title.' клас';
+		$this->keywords = 'ГДЗ - готові домашні завдання '.$clas.' клас, гдз '.$clas. ' клас, гдз онлайн '.$clas. ' клас, гдз '.$clas. ' клас Україна, гдз решебники '.$clas.' клас, готові домашні завдання '.$this->clasModel->title.' клас, гдз '.$this->clasModel->title.' клас' . $page;
 
-		$this->description = 'ГДЗ - готові домашні завдання для ' . $clas . ' класу середніх загальноосвітніх шкіл України.';
+		$this->description = 'ГДЗ - готові домашні завдання для ' . $clas . ' класу середніх загальноосвітніх шкіл України.' . $page;
 		// $this->h1 = 'ГДЗ '.(int)$clas.' клас';
-		// $this->pageTitle = 'SHKOLYAR.INFO - '.$this->h1;
-		// $this->canonical = Yii::app()->createAbsoluteUrl('/'.$clas);
+//		 $this->pageTitle = 'SHKOLYAR.INFO - '.$this->h1;
+//		 $this->canonical = Yii::app()->createAbsoluteUrl('/'.$clas);
 
 		$this->setMeta($page);
 
@@ -178,12 +173,12 @@ public function actionSubject($clas, $subject){
 		}
 
 		$this->keywords = 'ГДЗ - готові домашні завдання ' . $this->subjectModel->title . ' ' 
-			.$clas.' клас, гдз '. $this->subjectModel->title . ' ' .$clas.' клас, гдз онлайн '
+			. $clas.' клас, гдз '. $this->subjectModel->title . ' ' .$clas.' клас, гдз онлайн '
 			. $this->subjectModel->title . ' ' .$clas. ' клас, гдз '. $this->subjectModel->title . ' ' .$clas. ' клас Україна, гдз решебники '
-			. $this->subjectModel->title . ' ' .$clas.' клас, готові домашні завдання '. $this->subjectModel->title . ' ' .$this->clasModel->title.' клас, гдз '. $this->subjectModel->title . ' ' .$this->clasModel->title.' клас';
+			. $this->subjectModel->title . ' ' .$clas.' клас, готові домашні завдання '. $this->subjectModel->title . ' ' .$this->clasModel->title.' клас, гдз '. $this->subjectModel->title . ' ' .$this->clasModel->title.' клас' . $page;
 
 		$this->description = 'ГДЗ - готові домашні завдання ' 
-			. $this->subjectModel->title . ' ' .$clas.' клас, для середніх загальноосвітніх шкіл України.';
+			. $this->subjectModel->title . ' ' .$clas.' клас, для середніх загальноосвітніх шкіл України.' . $page;
 
 		// $this->h1 = 'ГДЗ '.(int)$clas.' клас '. $this->subjectModel->subject->title;
 		// $this->pageTitle = 'SHKOLYAR.INFO - '.$this->h1;
@@ -242,7 +237,7 @@ public function actionBook( $clas, $subject, $book ){
 			. $this->subjectModel->title . ' ' .$clas.' клас ' . $this->bookModel->author . ', готові домашні завдання '. $this->subjectModel->title . ' ' .$this->clasModel->title.' клас ' . $this->bookModel->author . ', гдз '. $this->subjectModel->title . ' ' .$this->clasModel->title.' клас ' . $this->bookModel->author . '';
 
 		$this->description = 'ГДЗ - готові домашні завдання ' 
-			. $this->subjectModel->title . ' ' .$clas.' клас ' . $this->bookModel->author . ', для середніх загальноосвітніх шкіл України.';
+			. $this->subjectModel->title . ' ' .$clas.' клас ' . $this->bookModel->author . ' ' . $this->bookModel->year;
 
 
 		$this->breadcrumbs = array(

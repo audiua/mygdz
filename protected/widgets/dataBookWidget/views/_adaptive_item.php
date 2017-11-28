@@ -22,6 +22,7 @@ $clasSlug = $this->controller->id == 'site'?$data->clas->slug:$data->clas->slug;
 		array(
 			'class'=>'', 
 			'title'=>$category.' для ' . $clas . ' класу ' . $data->subject->title . ' ' .  $data->author . ' '.  $data->year,
+			'alt'=>$category.' для ' . $clas . ' класу ' . $data->subject->title . ' ' .  $data->author . ' '.  $data->year,
 			'width'=>'140',
 			'heigth'=>'200'
 		)
