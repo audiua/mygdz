@@ -73,7 +73,7 @@ public function actionIndex(){
 			$page = '';
 		}
 
-		$this->pageTitle = 'Готові домашні завдання'.$page;
+		$this->pageTitle = 'ГДЗ(Готові домашні завдання). MYGDZ'.$page;
 		$this->description = $this->description.$page;
 		$this->keywords = $this->keywords.$page;
 		$this->canonical = Yii::app()->createAbsoluteUrl('/');
@@ -172,7 +172,7 @@ public function actionSubject($clas, $subject){
 			$page = '';
 		}
 
-		$this->keywords = 'ГДЗ - готові домашні завдання ' . $this->subjectModel->title . ' ' 
+		$this->keywords = 'ГДЗ - готові домашні завдання ' . $this->subjectModel->title . ' '
 			. $clas.' клас, гдз '. $this->subjectModel->title . ' ' .$clas.' клас, гдз онлайн '
 			. $this->subjectModel->title . ' ' .$clas. ' клас, гдз '. $this->subjectModel->title . ' ' .$clas. ' клас Україна, гдз решебники '
 			. $this->subjectModel->title . ' ' .$clas.' клас, готові домашні завдання '. $this->subjectModel->title . ' ' .$this->clasModel->title.' клас, гдз '. $this->subjectModel->title . ' ' .$this->clasModel->title.' клас' . $page;
@@ -608,12 +608,12 @@ private function setMeta($page=''){
 	}
 
 	if($this->bookModel){
-		$this->h1 .= $this->bookModel->author;
+		$this->h1 .= $this->bookModel->author  . " " . $this->bookModel->year ." рік" . $this->bookModel->properties;
 		$this->canonical .= '/'.$this->bookModel->slug;
 	}
 
 	$this->canonical = Yii::app()->createAbsoluteUrl($this->canonical);
-	$this->pageTitle = $this->h1 . $page;
+	$this->pageTitle = $this->h1 . " MYGDZ " . $page;
 }
 
 

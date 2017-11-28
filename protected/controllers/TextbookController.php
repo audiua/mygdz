@@ -75,7 +75,7 @@ public function actionIndex(){
 			$page = '';
 		}
 
-		$this->pageTitle = 'Підручники'.$page;
+		$this->pageTitle = 'Підручники. MYGDZ'.$page;
         $this->description = $this->description . $page;
         $this->keywords = $this->keywords . $page;
 		$this->canonical = Yii::app()->createAbsoluteUrl('/');
@@ -359,12 +359,12 @@ private function setMeta($page=''){
 	}
 
 	if($this->bookModel){
-		$this->h1 .= $this->bookModel->author;
+		$this->h1 .= $this->bookModel->author . " " . $this->bookModel->year ." рік" . $this->bookModel->properties;
 		$this->canonical .= '/'.$this->bookModel->slug;
 	}
 
 	$this->canonical = Yii::app()->createAbsoluteUrl($this->canonical);
-	$this->pageTitle = $this->h1 . $page;
+	$this->pageTitle = $this->h1 . ". MYGDZ" . $page;
 }
 
 
