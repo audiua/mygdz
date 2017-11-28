@@ -76,8 +76,9 @@ public function actionIndex(){
 		}
 
 		$this->pageTitle = 'Підручники. MYGDZ'.$page;
-        $this->description = $this->description . $page;
-        $this->keywords = $this->keywords . $page;
+        $this->description .= $page;
+        $this->keywords .= $page;
+        $this->h1 .= $page;
 		$this->canonical = Yii::app()->createAbsoluteUrl('/');
 
 		$criteria = new CDbCriteria;
@@ -365,6 +366,7 @@ private function setMeta($page=''){
 
 	$this->canonical = Yii::app()->createAbsoluteUrl($this->canonical);
 	$this->pageTitle = $this->h1 . ". MYGDZ" . $page;
+    $this->h1 .= $page;
 }
 
 
