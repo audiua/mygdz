@@ -228,7 +228,7 @@ public function actionBook( $clas, $subject, $book ){
 		$this->bookModel = $this->loadBook($book);
 
 		$this->keywords = 'скачати підручник '.$this->clasModel->name . ' клас '. $this->subjectModel->name.' ' . $this->bookModel->author . ' ' . $this->bookModel->year.', підручники онлайн, скачати підручники ';
-		$this->description = 'підручник '.$this->clasModel->name . ' клас '. $this->subjectModel->name.' ' . $this->bookModel->author . ' ' . $this->bookModel->year;
+		$this->description = 'підручник '.$this->clasModel->name . ' клас '. $this->subjectModel->name.' ' . $this->bookModel->author . ' ' . $this->bookModel->year . ' рік';
 
 
 		$this->breadcrumbs = array(
@@ -239,8 +239,8 @@ public function actionBook( $clas, $subject, $book ){
 			$this->bookModel->author
 		);
 
-		$this->h1 = 'Підручник '.$clas.' клас '. $this->subjectModel->name . ' ' .$this->bookModel->author;
-		$this->pageTitle = $this->h1;
+		$this->h1 = 'Підручник '.$clas.' клас '. $this->subjectModel->name . ' ' .$this->bookModel->author . $this->bookModel->year . ' рік';
+		$this->pageTitle = $this->h1 . ' MYGDZ';
 		// $this->canonical = Yii::app()->createAbsoluteUrl('/gdz/'.$clas.'/'.$subject.'/'.$book);
 		// $this->setMeta();
 

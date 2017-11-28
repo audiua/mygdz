@@ -238,7 +238,7 @@ public function actionBook( $clas, $subject, $book ){
 			. $this->subjectModel->title . ' ' .$clas.' клас ' . $this->bookModel->author . ', готові домашні завдання '. $this->subjectModel->title . ' ' .$this->clasModel->title.' клас ' . $this->bookModel->author . ', гдз '. $this->subjectModel->title . ' ' .$this->clasModel->title.' клас ' . $this->bookModel->author . '';
 
 		$this->description = 'ГДЗ - готові домашні завдання ' 
-			. $this->subjectModel->title . ' ' .$clas.' клас ' . $this->bookModel->author . ' ' . $this->bookModel->year;
+			. $this->subjectModel->title . ' ' .$clas.' клас ' . $this->bookModel->author . ' ' . $this->bookModel->year . ' рік';
 
 
 		$this->breadcrumbs = array(
